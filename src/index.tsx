@@ -1,12 +1,9 @@
 import { Hono } from 'hono'
-import { renderer } from './renderer'
+import { serveStatic } from 'hono/cloudflare-workers'
 
 const app = new Hono()
 
-app.use(renderer)
-
-app.get('/', (c) => {
-  return c.render(<h1>Hello!</h1>)
-})
+// Servir tous les fichiers statiques depuis le dossier public
+app.use('/*', serveStatic({ root: './' }))
 
 export default app

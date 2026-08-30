@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'Univers des Merveilles – Beauté, Accessoires & Art de Vivre</title>
+  <meta name="description" content="Boutique en ligne de produits de beauté, accessoires de luxe et articles ménagers modernes. Livraison à Ouagadougou et alentours." />
+  <meta name="theme-color" content="#6a0dad" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="images/logo/logo-univers-merveilles.webp" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="images/logo/logo-univers-merveilles.webp" alt="Logo L'univers des merveilles" class="nav-logo" />
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">L'Univers des Merveilles</span>
+        <span class="nav-brand-slogan">Beauté • Luxe • Art de Vivre</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="active"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="produits.html"><i class="fas fa-store"></i> Produits</a></li>
+      <li><a href="a-propos.html"><i class="fas fa-star"></i> À propos</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li>
+        <a href="https://wa.me/22677367727" target="_blank" class="btn btn-sm btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Commander
+        </a>
+      </li>
+    </ul>
+
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ============================================================
+     SECTION HÉRO
+     ============================================================ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-logo-container">
+      <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="hero-logo" />
+    </div>
+    <h1 class="hero-title">
+      L'Univers des
+      <span>Merveilles</span>
+    </h1>
+    <p class="hero-subtitle">✨ Beauté, Luxe & Art de Vivre Africain</p>
+    <p class="hero-tagline">
+      Découvrez une sélection exclusive de produits de beauté, accessoires raffinés 
+      et articles ménagers modernes – conçus pour la femme africaine moderne.
+    </p>
+    <div class="hero-cta">
+      <a href="produits.html" class="btn btn-primary">
+        <i class="fas fa-shopping-bag"></i> Découvrir nos produits
+      </a>
+      <a href="https://wa.me/22677367727" target="_blank" class="btn btn-outline">
+        <i class="fab fa-whatsapp"></i> Nous contacter
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATÉGORIES
+     ============================================================ -->
+<section class="section section-fond">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">✦ Notre Univers ✦</span>
+      <h2 class="section-title">Explorez nos catégories</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">
+        De la protection solaire aux accessoires de luxe, en passant par la maison et la cuisine – 
+        tout ce dont vous avez besoin est ici.
+      </p>
+    </div>
+
+    <div class="categories-grid">
+      <a href="produits.html?categorie=Protection" class="categorie-card reveal">
+        <div class="categorie-icon">🕶️</div>
+        <h3>Protection</h3>
+        <p>Lunettes UV, accessoires solaires</p>
+      </a>
+      <a href="produits.html?categorie=Maison+%26+Cuisine" class="categorie-card reveal">
+        <div class="categorie-icon">🏠</div>
+        <h3>Maison & Cuisine</h3>
+        <p>Gobelets, lunch box, électroménager</p>
+      </a>
+      <a href="produits.html?categorie=Mode+%26+Luxe" class="categorie-card reveal">
+        <div class="categorie-icon">💜</div>
+        <h3>Mode & Luxe</h3>
+        <p>Sacs, coffrets à bijoux, accessoires</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRODUITS VEDETTES
+     ============================================================ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">✦ Sélection du Moment ✦</span>
+      <h2 class="section-title">Nos produits phares</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">Des produits soigneusement sélectionnés pour vous offrir le meilleur rapport qualité-prix.</p>
+    </div>
+
+    <div class="produits-grid" id="produits-vedettes">
+      <!-- Générés par JS -->
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;" class="reveal">
+      <a href="produits.html" class="btn btn-violet">
+        <i class="fas fa-arrow-right"></i> Voir tous nos produits
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION AVANTAGES
+     ============================================================ -->
+<section class="section section-fond">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">✦ Pourquoi nous choisir ✦</span>
+      <h2 class="section-title">Nos engagements</h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <span class="stat-number">5+</span>
+        <span class="stat-label">Produits sélectionnés</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Satisfaction garantie</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number">🚚</span>
+        <span class="stat-label">Livraison à Ouagadougou</span>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number">💬</span>
+        <span class="stat-label">Support WhatsApp 7j/7</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEWSLETTER
+     ============================================================ -->
+<section class="newsletter-section">
+  <div class="container">
+    <h2 class="newsletter-title reveal">📬 Restez informé(e) de nos nouveautés</h2>
+    <p class="newsletter-desc reveal">Inscrivez-vous et recevez nos offres exclusives en avant-première.</p>
+    <form class="newsletter-form reveal">
+      <input type="email" class="newsletter-input" placeholder="Votre adresse email..." required />
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i> S'inscrire
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" />
+        <span class="footer-brand-name">L'Univers des Merveilles</span>
+      </div>
+      <p class="footer-desc">
+        Spécialisée dans la vente de produits et d'accessoires de beauté modernes, 
+        nous proposons des articles soigneusement sélectionnés pour faciliter 
+        votre quotidien et sublimer votre style.
+      </p>
+      <div class="footer-socials">
+        <a href="https://wa.me/22677367727" target="_blank" class="social-link" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right fa-xs"></i> Accueil</a></li>
+        <li><a href="produits.html"><i class="fas fa-chevron-right fa-xs"></i> Produits</a></li>
+        <li><a href="a-propos.html"><i class="fas fa-chevron-right fa-xs"></i> À propos</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right fa-xs"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Catégories</h4>
+      <ul>
+        <li><a href="produits.html?categorie=Protection"><i class="fas fa-chevron-right fa-xs"></i> Protection</a></li>
+        <li><a href="produits.html?categorie=Maison+%26+Cuisine"><i class="fas fa-chevron-right fa-xs"></i> Maison & Cuisine</a></li>
+        <li><a href="produits.html?categorie=Mode+%26+Luxe"><i class="fas fa-chevron-right fa-xs"></i> Mode & Luxe</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Saaba, à 150 m côté Est de l'USTA, Ouagadougou, Burkina Faso</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-phone"></i>
+        <span>+226 72 66 21 61</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.</span>
+    <span>Développé par <a href="tel:+22672662161">Marc Lompo</a></span>
+  </div>
+</footer>
+
+<!-- Bouton WhatsApp Flottant -->
+<a href="https://wa.me/22677367727" target="_blank" class="whatsapp-float" aria-label="Commander sur WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span>Commander</span>
+</a>
+
+<!-- Scripts -->
+<script src="js/produits.js"></script>
+<script src="js/app.js"></script>
+<script>
+  /* Afficher les produits vedettes */
+  const grid = document.getElementById('produits-vedettes');
+  if (grid) {
+    produits.forEach(p => {
+      const lienDetail = `produit.html?id=${p.id}`;
+      const lienWA = getWhatsAppLink(p);
+      grid.innerHTML += `
+        <article class="produit-card reveal">
+          <div class="produit-image-wrapper">
+            <img src="images/produits/${p.image}" alt="${p.nom}" loading="lazy" />
+            <span class="produit-badge" style="background:${p.badgeColor}">${p.badge}</span>
+            <div class="produit-overlay">
+              <a href="${lienDetail}" class="produit-overlay-btn">
+                <i class="fas fa-eye"></i> Voir le détail
+              </a>
+            </div>
+          </div>
+          <div class="produit-info">
+            <span class="produit-categorie">${p.categorie}</span>
+            <h3 class="produit-nom">${p.nom}</h3>
+            <p class="produit-desc">${p.description}</p>
+            <div class="produit-prix-section">
+              <span class="produit-prix">${formatPrix(p.prix)}</span>
+              ${p.prixPack ? `<span class="produit-prix-pack">${p.prixPackLabel}: ${formatPrix(p.prixPack)}</span>` : ''}
+            </div>
+          </div>
+        </article>
+      `;
+    });
+
+    // Re-observer les nouvelles cartes
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+</script>
+</body>
+</html>

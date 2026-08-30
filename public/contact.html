@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – L'Univers des Merveilles</title>
+  <meta name="description" content="Contactez L'Univers des Merveilles par WhatsApp, téléphone ou formulaire." />
+  <link rel="icon" type="image/webp" href="images/logo/logo-univers-merveilles.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .contact-box {
+      background: var(--blanc);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .contact-box-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-box-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--blanc);
+      flex-shrink: 0;
+    }
+    .contact-box h3 {
+      font-size: 1rem;
+      color: var(--titres);
+    }
+    .contact-box p, .contact-box a {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .contact-box a:hover {
+      color: var(--violet);
+    }
+    .form-card {
+      background: var(--blanc);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 35px rgba(0,0,0,0.08);
+    }
+    .form-card h2 {
+      font-size: 1.6rem;
+      color: var(--titres);
+      margin-bottom: 0.5rem;
+    }
+    .form-card p {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 2rem;
+    }
+    .form-error {
+      color: #e74c3c;
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+      display: none;
+    }
+    .form-control.is-invalid + .form-error {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="nav-logo" />
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">L'Univers des Merveilles</span>
+        <span class="nav-brand-slogan">Beauté • Luxe • Art de Vivre</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="produits.html"><i class="fas fa-store"></i> Produits</a></li>
+      <li><a href="a-propos.html"><i class="fas fa-star"></i> À propos</a></li>
+      <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li>
+        <a href="https://wa.me/22677367727" target="_blank" class="btn btn-sm btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Commander
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1 class="page-hero-title">Contactez-nous</h1>
+  <p class="page-hero-breadcrumb">
+    <a href="index.html">Accueil</a>
+    <i class="fas fa-chevron-right fa-xs" style="margin:0 0.4rem;"></i>
+    Contact
+  </p>
+</section>
+
+<!-- CONTACT PRINCIPAL -->
+<section class="section section-fond">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Sidebar informations -->
+      <aside class="contact-sidebar">
+        <div class="contact-box reveal-left">
+          <div class="contact-box-header">
+            <div class="contact-box-icon" style="background:linear-gradient(135deg,#25D366,#128C7E);">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+              <h3>WhatsApp</h3>
+              <span style="font-size:0.78rem;color:#27ae60;font-weight:600;">● Disponible maintenant</span>
+            </div>
+          </div>
+          <p>Commandez directement via WhatsApp pour une réponse rapide.</p>
+          <a href="https://wa.me/22677367727" target="_blank" class="btn btn-whatsapp btn-sm" style="margin-top:1rem;display:inline-flex;">
+            <i class="fab fa-whatsapp"></i> Écrire sur WhatsApp
+          </a>
+        </div>
+
+        <div class="contact-box reveal-left">
+          <div class="contact-box-header">
+            <div class="contact-box-icon" style="background:linear-gradient(135deg,var(--violet),#8e24aa);">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div><h3>Notre adresse</h3></div>
+          </div>
+          <p>
+            Ouagadougou, Saaba<br/>
+            à 150 m côté Est de l'USTA<br/>
+            (Université Saint-Thomas d'Aquin)<br/>
+            <strong>Burkina Faso</strong>
+          </p>
+        </div>
+
+        <div class="contact-box reveal-left">
+          <div class="contact-box-header">
+            <div class="contact-box-icon" style="background:linear-gradient(135deg,var(--or),var(--or-fonce));">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div><h3>Téléphone</h3></div>
+          </div>
+          <p>
+            <a href="tel:+22677367727" style="font-weight:600;color:var(--violet);font-size:1rem;">+226 77 36 77 27</a><br/>
+            <span style="font-size:0.82rem;color:#999;">WhatsApp · Lun–Sam 8h–20h</span>
+          </p>
+          <p style="margin-top:0.75rem;">
+            <a href="tel:+22672662161" style="font-weight:600;color:var(--violet);font-size:1rem;">+226 72 66 21 61</a><br/>
+            <span style="font-size:0.82rem;color:#999;">Marc Lompo – Support technique</span>
+          </p>
+        </div>
+
+        <div class="contact-box reveal-left">
+          <div class="contact-box-header">
+            <div class="contact-box-icon" style="background:linear-gradient(135deg,#e74c3c,#c0392b);">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div><h3>Horaires</h3></div>
+          </div>
+          <p>
+            <strong>Lundi – Vendredi :</strong> 8h00 – 20h00<br/>
+            <strong>Samedi :</strong> 9h00 – 18h00<br/>
+            <strong>Dimanche :</strong> WhatsApp uniquement
+          </p>
+        </div>
+      </aside>
+
+      <!-- Formulaire de contact -->
+      <div class="form-card reveal-right">
+        <h2>📩 Envoyez-nous un message</h2>
+        <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais.</p>
+
+        <form id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="nom">
+                <i class="fas fa-user" style="color:var(--violet);margin-right:0.4rem;"></i>Nom complet *
+              </label>
+              <input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom..." required />
+              <span class="form-error" id="nom-error">Le nom est requis.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">
+                <i class="fas fa-envelope" style="color:var(--violet);margin-right:0.4rem;"></i>Email *
+              </label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="votre@email.com" required />
+              <span class="form-error" id="email-error">Email valide requis.</span>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="telephone">
+                <i class="fas fa-phone" style="color:var(--violet);margin-right:0.4rem;"></i>Téléphone
+              </label>
+              <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="+226 XX XX XX XX" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sujet">
+                <i class="fas fa-tag" style="color:var(--violet);margin-right:0.4rem;"></i>Sujet *
+              </label>
+              <select id="sujet" name="sujet" class="form-control" required>
+                <option value="">-- Choisir un sujet --</option>
+                <option value="commande">Passer une commande</option>
+                <option value="info">Demande d'informations</option>
+                <option value="livraison">Question sur la livraison</option>
+                <option value="retour">Retour / Réclamation</option>
+                <option value="partenariat">Partenariat</option>
+                <option value="autre">Autre</option>
+              </select>
+              <span class="form-error" id="sujet-error">Veuillez choisir un sujet.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">
+              <i class="fas fa-comment" style="color:var(--violet);margin-right:0.4rem;"></i>Message *
+            </label>
+            <textarea id="message" name="message" class="form-control" placeholder="Décrivez votre demande en détail..." required></textarea>
+            <span class="form-error" id="message-error">Le message est requis.</span>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
+            <input type="checkbox" id="consent" name="consent" required style="width:18px;height:18px;cursor:pointer;" />
+            <label for="consent" style="font-size:0.85rem;color:#666;cursor:pointer;">
+              J'accepte que mes informations soient utilisées pour traiter ma demande.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+            <i class="fas fa-paper-plane"></i> Envoyer le message
+          </button>
+        </form>
+
+        <!-- Message de succès -->
+        <div id="success-msg" style="display:none;margin-top:1.5rem;padding:1.25rem 1.5rem;background:rgba(39,174,96,0.1);border:1px solid #27ae60;border-radius:12px;color:#27ae60;text-align:center;">
+          <i class="fas fa-check-circle" style="font-size:2rem;margin-bottom:0.5rem;display:block;"></i>
+          <strong>Message envoyé !</strong><br/>
+          <span style="font-size:0.9rem;">Nous vous répondrons très bientôt. En attendant, vous pouvez nous contacter via WhatsApp pour une réponse immédiate.</span>
+          <div style="margin-top:1rem;">
+            <a href="https://wa.me/22677367727" target="_blank" class="btn btn-whatsapp btn-sm">
+              <i class="fab fa-whatsapp"></i> WhatsApp maintenant
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTE GOOGLE MAPS -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">✦ Nous trouver ✦</span>
+      <h2 class="section-title">Notre localisation</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">
+        Situés à Saaba, à 150 m côté Est de l'USTA (Université Saint-Thomas d'Aquin), Ouagadougou, Burkina Faso.
+      </p>
+    </div>
+    <div class="map-container reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3897.7!2d-1.5074!3d12.3728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDIyJzIyLjEiTiAxwrAzMCcyNi42Ilc!5e0!3m2!1sfr!2sbf!4v1680000000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Carte Google Maps – L'Univers des Merveilles, Ouagadougou"
+      ></iframe>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="https://maps.google.com/?q=Saaba+USTA+Ouagadougou+Burkina+Faso" target="_blank" class="btn btn-violet">
+        <i class="fas fa-directions"></i> Ouvrir dans Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" />
+        <span class="footer-brand-name">L'Univers des Merveilles</span>
+      </div>
+      <p class="footer-desc">
+        Spécialisée dans la vente de produits et d'accessoires de beauté modernes pour la femme africaine.
+      </p>
+      <div class="footer-socials">
+        <a href="https://wa.me/22677367727" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right fa-xs"></i> Accueil</a></li>
+        <li><a href="produits.html"><i class="fas fa-chevron-right fa-xs"></i> Produits</a></li>
+        <li><a href="a-propos.html"><i class="fas fa-chevron-right fa-xs"></i> À propos</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right fa-xs"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Catégories</h4>
+      <ul>
+        <li><a href="produits.html?categorie=Protection"><i class="fas fa-chevron-right fa-xs"></i> Protection</a></li>
+        <li><a href="produits.html?categorie=Maison+%26+Cuisine"><i class="fas fa-chevron-right fa-xs"></i> Maison & Cuisine</a></li>
+        <li><a href="produits.html?categorie=Mode+%26+Luxe"><i class="fas fa-chevron-right fa-xs"></i> Mode & Luxe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Saaba, à 150 m côté Est de l'USTA, Ouagadougou, BF</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.</span>
+    <span>Développé par <a href="tel:+22672662161">Marc Lompo</a></span>
+  </div>
+</footer>
+
+<a href="https://wa.me/22677367727" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+  <span>Commander</span>
+</a>
+
+<script src="js/app.js"></script>
+<script>
+  /* Validation du formulaire de contact */
+  const contactForm = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-msg');
+
+  function validateField(input, errorId, validator) {
+    const isValid = validator(input.value.trim());
+    input.classList.toggle('is-invalid', !isValid);
+    input.classList.toggle('is-valid', isValid);
+    document.getElementById(errorId).style.display = isValid ? 'none' : 'block';
+    return isValid;
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nom = document.getElementById('nom');
+      const email = document.getElementById('email');
+      const sujet = document.getElementById('sujet');
+      const message = document.getElementById('message');
+      const consent = document.getElementById('consent');
+
+      const validNom = validateField(nom, 'nom-error', v => v.length >= 2);
+      const validEmail = validateField(email, 'email-error', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+      const validSujet = validateField(sujet, 'sujet-error', v => v !== '');
+      const validMessage = validateField(message, 'message-error', v => v.length >= 10);
+
+      if (!consent.checked) {
+        showToast('Veuillez accepter les conditions pour envoyer le message.', 'error');
+        return;
+      }
+
+      if (validNom && validEmail && validSujet && validMessage) {
+        contactForm.style.display = 'none';
+        successMsg.style.display = 'block';
+        showToast('Message envoyé avec succès ! ✅', 'success');
+      }
+    });
+
+    // Validation en temps réel
+    document.getElementById('nom').addEventListener('blur', function() {
+      validateField(this, 'nom-error', v => v.length >= 2);
+    });
+    document.getElementById('email').addEventListener('blur', function() {
+      validateField(this, 'email-error', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    });
+    document.getElementById('sujet').addEventListener('change', function() {
+      validateField(this, 'sujet-error', v => v !== '');
+    });
+    document.getElementById('message').addEventListener('blur', function() {
+      validateField(this, 'message-error', v => v.length >= 10);
+    });
+  }
+</script>
+</body>
+</html>

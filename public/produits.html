@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produits – L'Univers des Merveilles</title>
+  <meta name="description" content="Découvrez notre catalogue complet : lunettes UV, coffrets à bijoux, gobelets, lunch box, sacs de plage et bien plus." />
+  <link rel="icon" type="image/webp" href="images/logo/logo-univers-merveilles.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="nav-logo" />
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">L'Univers des Merveilles</span>
+        <span class="nav-brand-slogan">Beauté • Luxe • Art de Vivre</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="produits.html" class="active"><i class="fas fa-store"></i> Produits</a></li>
+      <li><a href="a-propos.html"><i class="fas fa-star"></i> À propos</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li>
+        <a href="https://wa.me/22677367727" target="_blank" class="btn btn-sm btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Commander
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1 class="page-hero-title">Notre Catalogue</h1>
+  <p class="page-hero-breadcrumb">
+    <a href="index.html">Accueil</a> <i class="fas fa-chevron-right fa-xs" style="margin:0 0.4rem;"></i> Produits
+  </p>
+</section>
+
+<!-- CATALOGUE -->
+<section class="section section-fond">
+  <div class="container">
+    <!-- Filtres -->
+    <div class="filtres" id="filtres" role="group" aria-label="Filtrer par catégorie">
+      <button class="filtre-btn actif" data-categorie="Tous">
+        <i class="fas fa-th-large"></i> Tous
+      </button>
+      <button class="filtre-btn" data-categorie="Protection">
+        🕶️ Protection
+      </button>
+      <button class="filtre-btn" data-categorie="Maison & Cuisine">
+        🏠 Maison & Cuisine
+      </button>
+      <button class="filtre-btn" data-categorie="Mode & Luxe">
+        💜 Mode & Luxe
+      </button>
+    </div>
+
+    <!-- Compteur -->
+    <p id="compteur" style="text-align:center; color:#888; margin-bottom:1.5rem; font-size:0.9rem;">
+      Affichage de <strong id="nb-produits">5</strong> produits
+    </p>
+
+    <!-- Grille -->
+    <div class="produits-grid" id="produits-grid">
+      <!-- Générés par JS -->
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container">
+    <h2 class="newsletter-title">📬 Nouveaux produits à venir</h2>
+    <p class="newsletter-desc">Inscrivez-vous et soyez les premiers à découvrir nos nouvelles merveilles !</p>
+    <form class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Votre adresse email..." required />
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i> S'inscrire
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" />
+        <span class="footer-brand-name">L'Univers des Merveilles</span>
+      </div>
+      <p class="footer-desc">
+        Spécialisée dans la vente de produits et d'accessoires de beauté modernes pour la femme africaine.
+      </p>
+      <div class="footer-socials">
+        <a href="https://wa.me/22677367727" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right fa-xs"></i> Accueil</a></li>
+        <li><a href="produits.html"><i class="fas fa-chevron-right fa-xs"></i> Produits</a></li>
+        <li><a href="a-propos.html"><i class="fas fa-chevron-right fa-xs"></i> À propos</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right fa-xs"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Catégories</h4>
+      <ul>
+        <li><a href="produits.html?categorie=Protection"><i class="fas fa-chevron-right fa-xs"></i> Protection</a></li>
+        <li><a href="produits.html?categorie=Maison+%26+Cuisine"><i class="fas fa-chevron-right fa-xs"></i> Maison & Cuisine</a></li>
+        <li><a href="produits.html?categorie=Mode+%26+Luxe"><i class="fas fa-chevron-right fa-xs"></i> Mode & Luxe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Saaba, à 150 m côté Est de l'USTA, Ouagadougou, BF</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.</span>
+    <span>Développé par <a href="tel:+22672662161">Marc Lompo</a></span>
+  </div>
+</footer>
+
+<a href="https://wa.me/22677367727" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+  <span>Commander</span>
+</a>
+
+<script src="js/produits.js"></script>
+<script src="js/app.js"></script>
+<script>
+  const grid = document.getElementById('produits-grid');
+  const nbProduits = document.getElementById('nb-produits');
+
+  function genererCartes(liste) {
+    grid.innerHTML = '';
+    if (liste.length === 0) {
+      grid.innerHTML = `
+        <div class="empty-state">
+          <i class="fas fa-search"></i>
+          <p>Aucun produit dans cette catégorie pour le moment.</p>
+        </div>
+      `;
+      nbProduits.textContent = '0';
+      return;
+    }
+
+    nbProduits.textContent = liste.length;
+    liste.forEach((p, i) => {
+      const lienDetail = `produit.html?id=${p.id}`;
+      const lienWA = getWhatsAppLink(p);
+      const card = document.createElement('article');
+      card.className = 'produit-card reveal';
+      card.style.animationDelay = `${i * 0.07}s`;
+      card.innerHTML = `
+        <div class="produit-image-wrapper">
+          <img src="images/produits/${p.image}" alt="${p.nom}" loading="lazy" />
+          <span class="produit-badge" style="background:${p.badgeColor}">${p.badge}</span>
+          <div class="produit-overlay">
+            <a href="${lienDetail}" class="produit-overlay-btn">
+              <i class="fas fa-eye"></i> Voir le détail
+            </a>
+          </div>
+        </div>
+        <div class="produit-info">
+          <span class="produit-categorie">${p.categorie}</span>
+          <h3 class="produit-nom">${p.nom}</h3>
+          <p class="produit-desc">${p.description}</p>
+          <div class="produit-prix-section">
+            <span class="produit-prix">${formatPrix(p.prix)}</span>
+            ${p.prixPack ? `<span style="font-size:0.78rem;color:#e67e22;font-weight:600;">Pack: ${formatPrix(p.prixPack)}</span>` : ''}
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Observer les nouvelles cartes
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  // Filtres
+  const filtresBtns = document.querySelectorAll('.filtre-btn');
+  filtresBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtresBtns.forEach(b => b.classList.remove('actif'));
+      btn.classList.add('actif');
+      const cat = btn.dataset.categorie;
+      genererCartes(getProduitsByCategorie(cat === 'Tous' ? null : cat));
+    });
+  });
+
+  // Lire le paramètre catégorie dans l'URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const catParam = urlParams.get('categorie');
+  if (catParam) {
+    filtresBtns.forEach(btn => {
+      btn.classList.remove('actif');
+      if (btn.dataset.categorie === catParam) {
+        btn.classList.add('actif');
+      }
+    });
+    genererCartes(getProduitsByCategorie(catParam));
+  } else {
+    genererCartes(produits);
+  }
+</script>
+</body>
+</html>
