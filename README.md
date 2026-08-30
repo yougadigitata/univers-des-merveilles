@@ -19,6 +19,7 @@ conçus pour la femme africaine moderne. Basée à **Ouagadougou, Burkina Faso**
 - **Déploiement Cloudflare Pages** uniquement via `.github/workflows/cloudflare.yml` (secrets CF_API_TOKEN / CF_ACCOUNT_ID configurés)
 - **Bordures décoratives wax** : Motifs africains subtils en séparateurs
 - **Responsive** : Mobile, tablette, desktop
+- **Page vidéo de présentation** (`video.html`) : vidéo optimisée H.264 (13,9 Mo → 2,9 Mo), poster WebP, CTA « Voir le catalogue » + « Commander sur WhatsApp », teaser cliquable sur l'accueil, lien « Vidéo » dans la navigation de toutes les pages
 
 ---
 
@@ -35,6 +36,7 @@ conçus pour la femme africaine moderne. Basée à **Ouagadougou, Burkina Faso**
 univers-des-merveilles/
 ├── public/
 │   ├── index.html          # Page d'accueil
+│   ├── video.html          # Page vidéo de présentation
 │   ├── produits.html       # Catalogue (8 produits)
 │   ├── produit.html        # Détail produit
 │   ├── a-propos.html       # Notre histoire
@@ -43,6 +45,9 @@ univers-des-merveilles/
 │   ├── js/
 │   │   ├── produits.js     # Données produits (sans prix)
 │   │   └── app.js          # Scripts communs
+│   ├── videos/
+│   │   ├── presentation-univers.mp4   # Vidéo optimisée (2,9 Mo)
+│   │   └── presentation-poster.webp   # Image d'aperçu
 │   └── images/
 │       ├── logo/           # Logo boutique
 │       └── produits/       # Images optimisées WebP

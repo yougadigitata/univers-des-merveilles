@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notre univers en vidéo – L'Univers des Merveilles</title>
+  <meta name="description" content="Plongez dans l'univers des merveilles – découvrez nos produits en mouvement : bijoux, lunettes, accessoires et articles de maison." />
+  <meta name="theme-color" content="#d4a857" />
+  <link rel="icon" type="image/webp" href="images/logo/logo-univers-merveilles.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ---- Section vidéo immersive ---- */
+    .video-section {
+      padding: 4rem 1.5rem 3rem;
+      background: var(--creme);
+    }
+    .video-wrapper {
+      max-width: 900px;
+      width: 90%;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(30, 21, 16, 0.25);
+      position: relative;
+      background: #000;
+      border: 3px solid var(--champagne);
+    }
+    .video-wrapper video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      background: #000;
+    }
+    .video-caption {
+      max-width: 720px;
+      margin: 2.5rem auto 0;
+      text-align: center;
+    }
+    .video-caption h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--titres);
+      margin-bottom: 0.75rem;
+    }
+    .video-caption p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--texte-clair);
+    }
+
+    /* ---- CTA après la vidéo ---- */
+    .video-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2.25rem;
+    }
+
+    /* ---- Cartes "Et maintenant ?" ---- */
+    .next-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .next-step-card {
+      background: var(--blanc);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 25px var(--ombre);
+      transition: transform var(--transition), box-shadow var(--transition);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      border: 1px solid var(--gris-clair);
+    }
+    .next-step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px var(--ombre-forte);
+      border-color: var(--champagne);
+    }
+    .next-step-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--blanc);
+      background: linear-gradient(135deg, var(--accent), var(--champagne-fonce));
+      box-shadow: 0 6px 20px rgba(139, 99, 67, 0.3);
+    }
+    .next-step-card.wa .next-step-icon {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+    }
+    .next-step-card h3 {
+      font-size: 1.1rem;
+      color: var(--titres);
+      margin-bottom: 0.5rem;
+    }
+    .next-step-card p {
+      font-size: 0.9rem;
+      color: var(--texte-clair);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .video-section {
+        padding: 2.5rem 1rem 2rem;
+      }
+      .video-wrapper {
+        width: 100%;
+      }
+      .video-caption h2 {
+        font-size: 1.3rem;
+      }
+      .video-cta .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="nav-logo" />
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">L'Univers des Merveilles</span>
+        <span class="nav-brand-slogan">Beauté • Luxe • Art de Vivre</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="produits.html"><i class="fas fa-store"></i> Produits</a></li>
+      <li><a href="video.html" class="active"><i class="fas fa-play-circle"></i> Vidéo</a></li>
+      <li><a href="a-propos.html"><i class="fas fa-star"></i> À propos</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li>
+        <a href="https://wa.me/22677367727" target="_blank" class="btn btn-sm btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Commander
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1 class="page-hero-title">Notre Univers en Vidéo</h1>
+  <p class="page-hero-breadcrumb">
+    <a href="index.html">Accueil</a>
+    <i class="fas fa-chevron-right fa-xs" style="margin:0 0.4rem;"></i>
+    Vidéo de présentation
+  </p>
+</section>
+
+<div class="wax-border"></div>
+
+<!-- SECTION VIDÉO -->
+<main>
+  <section class="video-section" id="presentation-video">
+    <div class="video-wrapper reveal">
+      <video
+        id="video-presentation"
+        controls
+        playsinline
+        preload="metadata"
+        poster="videos/presentation-poster.webp">
+        <source src="videos/presentation-univers.mp4" type="video/mp4" />
+        Votre navigateur ne prend pas en charge la lecture vidéo.
+        <a href="videos/presentation-univers.mp4">Téléchargez la vidéo ici</a>.
+      </video>
+    </div>
+
+    <div class="video-caption reveal">
+      <h2><i class="fas fa-gem" style="color:var(--champagne); margin-right:0.5rem;"></i>Plongez dans l'univers des merveilles</h2>
+      <p>
+        Découvrez nos produits en mouvement : bijoux, lunettes, accessoires de luxe
+        et articles de maison soigneusement sélectionnés pour sublimer votre quotidien.
+      </p>
+
+      <div class="video-cta">
+        <a href="produits.html" class="btn btn-primary">
+          <i class="fas fa-shopping-bag"></i> Voir le catalogue
+        </a>
+        <a href="https://wa.me/22677367727?text=Bonjour%20!%20J'ai%20vu%20votre%20vid%C3%A9o%20de%20pr%C3%A9sentation%20et%20je%20souhaite%20commander." target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION "ET MAINTENANT ?" -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">✦ Envie d'aller plus loin ? ✦</span>
+        <h2 class="section-title">Passez à l'action</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="next-steps-grid">
+        <a href="produits.html" class="next-step-card reveal">
+          <div class="next-step-icon"><i class="fas fa-store"></i></div>
+          <h3>Explorer le catalogue</h3>
+          <p>Parcourez tous nos produits disponibles : protection, maison &amp; cuisine, mode &amp; luxe.</p>
+        </a>
+        <a href="https://wa.me/22677367727?text=Bonjour%20!%20Je%20souhaite%20passer%20une%20commande." target="_blank" class="next-step-card wa reveal">
+          <div class="next-step-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>Commander directement</h3>
+          <p>Contactez-nous sur WhatsApp au +226 77 36 77 27 pour passer votre commande en quelques minutes.</p>
+        </a>
+        <a href="contact.html" class="next-step-card reveal">
+          <div class="next-step-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Nous contacter</h3>
+          <p>Une question ? Écrivez-nous ou rendez-nous visite à Saaba, Ouagadougou.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" />
+        <span class="footer-brand-name">L'Univers des Merveilles</span>
+      </div>
+      <p class="footer-desc">
+        Spécialisée dans la vente de produits et d'accessoires de beauté modernes pour la femme africaine.
+      </p>
+      <div class="footer-socials">
+        <a href="https://wa.me/22677367727" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right fa-xs"></i> Accueil</a></li>
+        <li><a href="produits.html"><i class="fas fa-chevron-right fa-xs"></i> Produits</a></li>
+        <li><a href="video.html"><i class="fas fa-chevron-right fa-xs"></i> Vidéo</a></li>
+        <li><a href="a-propos.html"><i class="fas fa-chevron-right fa-xs"></i> À propos</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right fa-xs"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Catégories</h4>
+      <ul>
+        <li><a href="produits.html?categorie=Protection"><i class="fas fa-chevron-right fa-xs"></i> Protection</a></li>
+        <li><a href="produits.html?categorie=Maison+%26+Cuisine"><i class="fas fa-chevron-right fa-xs"></i> Maison & Cuisine</a></li>
+        <li><a href="produits.html?categorie=Mode+%26+Luxe"><i class="fas fa-chevron-right fa-xs"></i> Mode & Luxe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Saaba, à 150 m côté Est de l'USTA, Ouagadougou, BF</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.</span>
+    <span>Développeur : Marc Lompo – +226 72 66 21 61</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/22677367727" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+  <span>Commander</span>
+</a>
+
+<script src="js/app.js"></script>
+</body>
+</html>
