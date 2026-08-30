@@ -27,6 +27,13 @@
   --transition: 0.3s ease;
   --radius: 12px;
   --radius-lg: 20px;
+
+  /* Alias de compatibilité (ancienne charte → palette luxe neutre) */
+  --or: var(--champagne);
+  --or-fonce: var(--champagne-fonce);
+  --fond: var(--creme);
+  --violet-clair: var(--accent-clair);
+  --violet-fonce: var(--titres);
 }
 
 /* ---- Reset & Base ---- */
@@ -1566,4 +1573,36 @@ textarea.form-control {
   .stats-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* ============================================================
+   ACCESSIBILITÉ & MICRO-INTERACTIONS (audit design)
+   ============================================================ */
+
+/* Focus visible pour la navigation clavier */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respect des préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Micro-interaction douce sur les cartes produits */
+.produit-card {
+  will-change: transform;
 }

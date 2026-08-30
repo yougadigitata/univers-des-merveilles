@@ -16,7 +16,7 @@ conçus pour la femme africaine moderne. Basée à **Ouagadougou, Burkina Faso**
 - **Prix supprimés** : Remplacés par badge « Prix à venir » sur toutes les pages
 - **Images optimisées** : Conversion en WebP, compression avec Sharp, lazy loading
 - **Numéros de contact corrigés** : Boutique (+226 77 36 77 27) séparé du développeur
-- **Déploiement Cloudflare Pages** uniquement (workflow GitHub Pages supprimé)
+- **Déploiement Cloudflare Pages** uniquement via `.github/workflows/cloudflare.yml` (secrets CF_API_TOKEN / CF_ACCOUNT_ID configurés)
 - **Bordures décoratives wax** : Motifs africains subtils en séparateurs
 - **Responsive** : Mobile, tablette, desktop
 
@@ -48,7 +48,7 @@ univers-des-merveilles/
 │       └── produits/       # Images optimisées WebP
 ├── dist/                   # Build de production (généré)
 ├── .github/workflows/
-│   └── deploy.yml          # Déploiement automatique Cloudflare Pages
+│   └── cloudflare.yml      # Déploiement automatique Cloudflare Pages
 ├── ecosystem.config.cjs    # Configuration PM2 (développement sandbox)
 ├── vite.config.ts          # Config build Vite
 ├── wrangler.jsonc          # Config Cloudflare Workers
