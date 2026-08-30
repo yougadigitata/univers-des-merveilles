@@ -25,35 +25,34 @@ const produits = [
   },
   {
     id: 3,
-    nom: "Lunch Box Électrique – Modèle Couleurs",
+    nom: "Thermos Grise",
     categorie: "Maison & Cuisine",
-    prixUnitaire: 11000,
+    prixUnitaire: 12000,
     prixPack: null,
-    description: "Chauffe-repas électrique 3 contenants inox, hermétique – disponible en noir, rose ou rouge.",
-    descriptionComplete: `Cette lunch box électrique révolutionne vos repas au bureau ou en déplacement. 
-    Disponible en trois coloris au choix – noir, rose ou rouge – elle est équipée de 3 contenants en acier 
-    inoxydable de qualité alimentaire, pour transporter différents plats sans mélange de saveurs. 
-    Le système de chauffage rapide et économique vous garantit un repas chaud en quelques minutes. 
-    Son design hermétique et sécurisé prévient toute fuite. Légère et facile à transporter, elle est 
-    votre alliée pour une alimentation saine et chaude partout. Précisez votre coloris préféré lors 
-    de votre commande sur WhatsApp.`,
+    description: "Thermos chauffe-repas électrique 4 sous-plats inox, hermétique – finition blanche & grise à chevrons.",
+    descriptionComplete: `Ce thermos chauffe-repas électrique révolutionne vos repas au bureau ou en déplacement. 
+    Sa finition blanche et grise à motif chevrons lui donne une allure moderne et sobre. Il est équipé de 
+    4 sous-plats en acier inoxydable de qualité alimentaire, pour transporter différents plats sans mélange 
+    de saveurs. Le système de chauffage rapide et économique vous garantit un repas chaud en quelques minutes. 
+    Son design hermétique et sécurisé prévient toute fuite. Léger et facile à transporter, il est 
+    votre allié pour une alimentation saine et chaude partout.`,
     image: "lunch-box-electrique.webp",
     badge: "Pratique",
     badgeColor: "#4a7c59"
   },
   {
     id: 4,
-    nom: "Lunch Box Électrique – Modèle Grille",
+    nom: "Thermos Rose",
     categorie: "Maison & Cuisine",
-    prixUnitaire: 12000,
+    prixUnitaire: 11000,
     prixPack: null,
     nouveaute: true,
-    description: "Chauffe-repas électrique premium avec plusieurs plats compartimentés – capacité XXL.",
-    descriptionComplete: `Cette lunch box électrique modèle « Grille » premium est parfaite pour ceux qui veulent 
+    description: "Thermos chauffe-repas électrique rose & blanc avec 3 sous-plats inox – capacité généreuse.",
+    descriptionComplete: `Ce thermos chauffe-repas électrique rose et blanc est parfait pour ceux qui veulent 
     transporter plusieurs plats variés en une seule fois : riz et légumes, viande ou poulet, soupe ou sauce. 
-    Ses grands contenants en acier inoxydable alimentaire empilables gardent chaque plat au chaud séparément, 
+    Ses 3 sous-plats en acier inoxydable alimentaire empilables gardent chaque plat au chaud séparément, 
     sans mélange de saveurs. Design tout en rose et blanc, élégant et facile à nettoyer. 
-    Idéale pour la famille, le bureau ou les grands appétits. Un vrai repas complet et chaud, partout, 
+    Idéal pour la famille, le bureau ou les grands appétits. Un vrai repas complet et chaud, partout, 
     à tout moment.`,
     image: "lunch-box-electrique-grille.webp",
     badge: "Nouveau",
@@ -96,7 +95,7 @@ const produits = [
     id: 7,
     nom: "Coffret à Bijoux Vert",
     categorie: "Mode & Luxe",
-    prixUnitaire: 6000,
+    prixUnitaire: 12500,
     prixPack: null,
     description: "Écrin en similicuir vert, velours intérieur, compartiments pour bagues, colliers, montres.",
     descriptionComplete: `Ce magnifique coffret à bijoux en similicuir vert forêt est un véritable 
@@ -279,22 +278,6 @@ const produits = [
     image: "boite-bijoux-pivotante-verte.webp",
     badge: "Nouveau",
     badgeColor: "#27ae60"
-  },
-  {
-    id: 18,
-    nom: "Duo Sacs de Plage Tropical",
-    categorie: "Mode & Luxe",
-    prixUnitaire: null,
-    prixPack: null,
-    nouveaute: true,
-    description: "Set 2 sacs plage imprimé tropical (grand + petit), base jute, anses corde – parfait duo mère/fille.",
-    descriptionComplete: `Ce duo de sacs de plage tropical est l'accessoire mode incontournable de la saison ! 
-    Le set comprend un grand sac fourre-tout et un mini sac assorti, tous deux ornés d'un magnifique imprimé plage tropicale aux couleurs turquoise éclatantes. 
-    La base en jute naturel tressé apporte robustesse et authenticité, tandis que les anses en corde avec pompons blancs sont confortables et tendance. 
-    Parfait pour la plage, le marché ou en ville. Un set idéal pour les duos mère/fille ou simplement pour avoir le grand pour la plage et le petit pour les essentiels.`,
-    image: "sac-plage-tropical-duo.webp",
-    badge: "Nouveau",
-    badgeColor: "#2980b9"
   },
   {
     id: 19,
