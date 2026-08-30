@@ -1,5 +1,17 @@
 # L'Univers des Merveilles
 
+## 🆕 Corrections prix + remplacement vidéo (30 août 2026 - v4)
+- **Thermos Grise** (id 3, ex-« Lunch Box Couleurs ») : prix corrigé à **12 000 FCFA**.
+- **Thermos Rose** (id 4, ex-« Lunch Box Grille ») : prix corrigé à **11 000 FCFA**.
+- **Coffret à Bijoux Vert** (id 7) : prix corrigé à **12 500 FCFA** (était 6 000).
+- **Sac de Plage Tropical** (id 8) : confirmé à **5 000 FCFA**, aucune mention « Duo ».
+- **Suppression du produit « Duo Sacs de Plage Tropical »** (id 18, prix non défini) et de ses images associées (`sac-plage-tropical-duo.jpg/.webp`) — catalogue : **18 produits**.
+- **Vidéo de présentation remplacée** (`public/videos/presentation-univers.mp4`) : nouvelle vidéo fournie par le chef (ne contient plus le gobelet Lily). Nouveau poster généré automatiquement depuis la première frame exploitable (`presentation-poster.webp`).
+- Vérifié : 0 référence "Duo"/"duo" dans `produits.js`, 0 erreur console sur `produits.html` et `video.html`, tous les assets (images/vidéo/poster) répondent en 200.
+- Déployé sur Cloudflare Pages : https://univers-des-merveilles.pages.dev
+
+---
+
 ## 🆕 Mise à jour cumulée (30 août 2026)
 - **Animation logo à l'ouverture** : rotation 160° (~1,5s) + jaillissement d'étoiles ⭐✨🌟 sur le logo du menu (toutes pages) et le logo héro (accueil) — voir `.logo-intro-spin` / `faireJaillirEtoiles()` dans `app.js`.
 - **Formulaire de réservation → WhatsApp** (`contact.html`) : Prénom, Nom, Téléphone, Produit (liste dynamique du catalogue), Quantité, Message → génère et ouvre un lien `wa.me/22677367727` pré-rempli.
