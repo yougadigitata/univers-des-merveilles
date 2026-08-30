@@ -247,6 +247,91 @@ const produits = [
     image: "lunettes-hexagonales-noires.webp",
     badge: "Nouveau",
     badgeColor: "#3d2e1e"
+  },
+  {
+    id: 16,
+    nom: "Gourde Kawaii Violette",
+    categorie: "Maison & Cuisine",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Gourde thermos violette style kawaii avec figurine lapin sous dôme, bandoulière incluse.",
+    descriptionComplete: `Cette gourde thermos kawaii violette est un véritable objet de collection autant qu'un accessoire hydratation pratique. 
+    Son design unique en forme de capsule spatiale abrite une adorable figurine lapin avec nœud violet sous un dôme transparent. 
+    La bandoulière aux motifs « Have A Nice Day » rend le transport facile et stylé. 
+    Idéale pour les enfants, adolescentes et toutes les femmes qui aiment le style kawaii japonais. 
+    Garde vos boissons au frais ou au chaud plusieurs heures. Un cadeau coup de cœur garanti !`,
+    image: "gourde-kawaii-violette.webp",
+    badge: "Nouveau",
+    badgeColor: "#9b59b6"
+  },
+  {
+    id: 17,
+    nom: "Boîte à Bijoux Pivotante Verte",
+    categorie: "Mode & Luxe",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Boîte à bijoux rotative 4 niveaux vert menthe, miroir intégré – rangement élégant et compact.",
+    descriptionComplete: `Cette boîte à bijoux pivotante 4 niveaux en plastique vert menthe pastel révolutionne l'organisation de vos accessoires. 
+    Chaque plateau tourne indépendamment pour accéder facilement à tous vos bijoux sans les déranger. 
+    Le couvercle supérieur intègre un miroir rond pour vos retouches beauté. 
+    Les multiples compartiments s'adaptent à tous types de bijoux : bagues, boucles d'oreilles, colliers, bracelets, barrettes. 
+    Son design compact et élégant s'intègre parfaitement sur une coiffeuse ou une commode. 
+    La solution rangement idéale pour les femmes organisées qui aiment avoir leurs bijoux à portée de main.`,
+    image: "boite-bijoux-pivotante-verte.webp",
+    badge: "Nouveau",
+    badgeColor: "#27ae60"
+  },
+  {
+    id: 18,
+    nom: "Duo Sacs de Plage Tropical",
+    categorie: "Mode & Luxe",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Set 2 sacs plage imprimé tropical (grand + petit), base jute, anses corde – parfait duo mère/fille.",
+    descriptionComplete: `Ce duo de sacs de plage tropical est l'accessoire mode incontournable de la saison ! 
+    Le set comprend un grand sac fourre-tout et un mini sac assorti, tous deux ornés d'un magnifique imprimé plage tropicale aux couleurs turquoise éclatantes. 
+    La base en jute naturel tressé apporte robustesse et authenticité, tandis que les anses en corde avec pompons blancs sont confortables et tendance. 
+    Parfait pour la plage, le marché ou en ville. Un set idéal pour les duos mère/fille ou simplement pour avoir le grand pour la plage et le petit pour les essentiels.`,
+    image: "sac-plage-tropical-duo.webp",
+    badge: "Nouveau",
+    badgeColor: "#2980b9"
+  },
+  {
+    id: 19,
+    nom: "Lunettes Carrées Ambre & Noir",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Solaires oversize monture noire épaisse, verres ambre chaleureux, barre nasale dorée – style rétro premium.",
+    descriptionComplete: `Ces lunettes de soleil carrées oversize en acétate noir brillant épais incarnent le glamour rétro à son summum. 
+    Leurs larges verres ambre chaleureux subliment le regard avec une protection UV400 complète. 
+    La double barre nasale dorée apporte une signature aviateur-luxe immédiatement reconnaissable. 
+    Portées ici par une beauté africaine, elles mettent en valeur tous les types de visages. 
+    Un accessoire statement pour les femmes qui osent affirmer leur style avec élégance et caractère.`,
+    image: "lunettes-carrees-ambre-noires.webp",
+    badge: "Nouveau",
+    badgeColor: "#b8892f"
+  },
+  {
+    id: 20,
+    nom: "Lunettes Rondes Noires Élégance",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Solaires rondes oversize noires, monture épaisse, branches décorées strass dorés – élégance & intemporel.",
+    descriptionComplete: `Ces lunettes de soleil rondes oversize en acétate noir profond sont la définition même de l'élégance intemporelle. 
+    Leur monture ronde épaisse encadre de larges verres noirs offrant une protection UV400 optimale pour vos yeux. 
+    Les branches sont finement ornées de détails strass dorés discrets, signature d'une finition haute gamme. 
+    Protection UV400 · Vision confortable · Style chic & raffiné. 
+    Telles qu'elles sont portées ici avec grâce, elles transforment instantanément chaque tenue en look sophistiqué.`,
+    image: "lunettes-rondes-noires-elegance.webp",
+    badge: "Nouveau",
+    badgeColor: "#1a1a1a"
   }
 ];
 
