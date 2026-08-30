@@ -128,8 +128,134 @@ const produits = [
     image: "sac-plage-tropical.webp",
     badge: "Mode",
     badgeColor: "#e74c3c"
+  },
+  {
+    id: 9,
+    nom: "Lunettes Aviateur Or & Noir",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Solaires aviateur oversize, verres noirs, monture dorée sans cadre – allure premium.",
+    descriptionComplete: `Ces lunettes de soleil aviateur oversize incarnent le luxe à l'état pur. 
+    Leur monture dorée minimaliste sans cadre met en valeur de larges verres noirs fumés offrant 
+    une protection UV400 optimale. Le détail géométrique triangulaire doré sur les branches apporte 
+    une signature haute couture immédiatement reconnaissable. Légères et confortables, elles épousent 
+    parfaitement le visage. L'accessoire statement par excellence pour un look affirmé et sophistiqué.`,
+    image: "lunettes-aviateur-or-noir.webp",
+    badge: "Nouveau",
+    badgeColor: "#b8892f"
+  },
+  {
+    id: 10,
+    nom: "Lunettes Carrées Dégradé & Strass",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Solaires carrées oversize, verres dégradé ambre, monture dorée ornée de strass.",
+    descriptionComplete: `Véritables bijoux pour le regard, ces lunettes carrées oversize séduisent par 
+    leurs verres dégradé ambre-brun du plus bel effet. La barre supérieure de la monture dorée est 
+    délicatement sertie de strass scintillants, tout comme les branches finement travaillées. 
+    Protection UV400 garantie pour allier glamour et santé oculaire. Un modèle spectaculaire qui 
+    transforme chaque sortie en défilé de mode.`,
+    image: "lunettes-carrees-degrade-strass.webp",
+    badge: "Nouveau",
+    badgeColor: "#b8892f"
+  },
+  {
+    id: 11,
+    nom: "Lunettes Carrées Noires Verres Ambre",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Solaires carrées en acétate noir épais, verres ambre chaleureux – style rétro-chic.",
+    descriptionComplete: `Ces lunettes de soleil carrées en acétate noir brillant affichent un caractère 
+    rétro-chic irrésistible. Leur monture épaisse et structurée encadre des verres ambre chaleureux 
+    qui subliment le regard tout en assurant une protection UV400 complète. Les rivets dorés discrets 
+    sur les branches signent la finition premium. Un classique intemporel revisité, parfait pour 
+    accompagner toutes vos tenues avec élégance.`,
+    image: "lunettes-carrees-noires-ambre.webp",
+    badge: "Nouveau",
+    badgeColor: "#3d2e1e"
+  },
+  {
+    id: 12,
+    nom: "Lunettes Rondes Perle Noires",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Monture ronde oversize noire, branches dorées ondulées ornées d'une perle nacrée.",
+    descriptionComplete: `Cette monture optique ronde oversize en acétate noir profond est une véritable 
+    déclaration de style. Ses branches dorées à la silhouette ondulée sont ornées d'une élégante perle 
+    nacrée, clin d'œil raffiné à la haute joaillerie. Les verres neutres peuvent accueillir vos verres 
+    correcteurs ou anti-lumière bleue. Un modèle vintage-couture qui apporte instantanément du caractère 
+    et de la sophistication à votre visage.`,
+    image: "lunettes-rondes-perle-noires.webp",
+    badge: "Nouveau",
+    badgeColor: "#b8892f"
+  },
+  {
+    id: 13,
+    nom: "Lunettes Écaille Oversize",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Monture carrée oversize motif écaille de tortue, verres clairs anti-lumière bleue.",
+    descriptionComplete: `Cette monture carrée oversize au motif écaille de tortue est l'alliée parfaite 
+    de votre quotidien connecté. Ses verres clairs filtrent la lumière bleue des écrans pour préserver 
+    votre confort visuel, et peuvent recevoir une correction sur mesure. Le motif havane aux nuances 
+    chaudes flatte toutes les carnations, tandis que les rivets discrets soulignent la qualité de 
+    fabrication. Le mélange idéal entre tendance et fonctionnalité.`,
+    image: "lunettes-ecaille-oversize.webp",
+    badge: "Nouveau",
+    badgeColor: "#a67c5b"
+  },
+  {
+    id: 14,
+    nom: "Lunettes Papillon Écaille",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Monture œil-de-chat écaille de tortue, médaillon doré – féminité et raffinement.",
+    descriptionComplete: `Cette monture papillon (œil-de-chat) au motif écaille de tortue incarne 
+    la féminité intemporelle. Sa silhouette relevée aux tempes ouvre et illumine le regard, tandis que 
+    le médaillon doré finement ciselé sur les branches apporte la touche joaillerie. Compatible avec 
+    verres correcteurs ou anti-lumière bleue, elle accompagne aussi bien vos journées de travail que 
+    vos soirées élégantes. Un charme rétro résolument moderne.`,
+    image: "lunettes-papillon-ecaille.webp",
+    badge: "Nouveau",
+    badgeColor: "#a67c5b"
+  },
+  {
+    id: 15,
+    nom: "Lunettes Hexagonales Noires",
+    categorie: "Protection",
+    prixUnitaire: null,
+    prixPack: null,
+    nouveaute: true,
+    description: "Monture hexagonale oversize noire, détail « V » doré – design audacieux et graphique.",
+    descriptionComplete: `Osez la géométrie avec cette monture hexagonale oversize en acétate noir 
+    brillant. Ses lignes anguleuses ultra-graphiques structurent le visage et affirment une personnalité 
+    créative. Le détail « V » doré sur les branches signe la finition luxueuse du modèle. Verres clairs 
+    adaptables en correction ou en filtre anti-lumière bleue. La pièce forte qui distingue 
+    immédiatement votre style de celui des autres.`,
+    image: "lunettes-hexagonales-noires.webp",
+    badge: "Nouveau",
+    badgeColor: "#3d2e1e"
   }
 ];
+
+/**
+ * Récupère les nouveautés (derniers arrivages)
+ */
+const getNouveautes = () => {
+  return produits.filter(p => p.nouveaute === true);
+};
 
 /**
  * Récupère un produit par son ID
@@ -139,11 +265,18 @@ const getProduitById = (id) => {
 };
 
 /**
- * Récupère les produits par catégorie
+ * Trie une liste : les nouveautés en tête, puis l'ordre d'origine
+ */
+const trierNouveautesEnTete = (liste) => {
+  return [...liste].sort((a, b) => (b.nouveaute === true ? 1 : 0) - (a.nouveaute === true ? 1 : 0));
+};
+
+/**
+ * Récupère les produits par catégorie (nouveautés en tête de liste)
  */
 const getProduitsByCategorie = (categorie) => {
-  if (!categorie || categorie === 'Tous') return produits;
-  return produits.filter(p => p.categorie === categorie);
+  if (!categorie || categorie === 'Tous') return trierNouveautesEnTete(produits);
+  return trierNouveautesEnTete(produits.filter(p => p.categorie === categorie));
 };
 
 /**

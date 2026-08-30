@@ -7,12 +7,27 @@ conçus pour la femme africaine moderne. Basée à **Ouagadougou, Burkina Faso**
 
 ---
 
-## ✅ Fonctionnalités implémentées (v2)
+## ✅ Fonctionnalités implémentées (v3)
+
+### Nouveautés v3 (août 2026) – Collection Lunettes
+- **7 nouvelles lunettes** ajoutées au catalogue (catégorie **Protection**), à partir des visuels fournis :
+  1. Lunettes Aviateur Or & Noir (id 9)
+  2. Lunettes Carrées Dégradé & Strass (id 10)
+  3. Lunettes Carrées Noires Verres Ambre (id 11)
+  4. Lunettes Rondes Perle Noires (id 12)
+  5. Lunettes Écaille Oversize (id 13)
+  6. Lunettes Papillon Écaille (id 14)
+  7. Lunettes Hexagonales Noires (id 15)
+- **Section « Nos nouveautés »** sur la page d'accueil (derniers arrivages, badge « Nouveau »)
+- **Nouveautés en tête de liste** dans le catalogue (tri automatique via `nouveaute: true`)
+- **Images optimisées** : WebP, max 1200px, qualité 80 (~55-100 Ko chacune, total ≈ 588 Ko)
+- **Prix en attente** : `prixUnitaire: null` / `prixPack: null` — badge « Prix à venir » affiché ; à renseigner dans `public/js/produits.js` dès communication du chef
+- Script `optimize-incoming.mjs` pour optimiser les futurs lots d'images (dossier `incoming/`, ignoré par git)
 
 - **Refonte graphique complète** : Palette beige / blanc cassé / champagne / tons chauds (plus de violet)
 - **Fond héro** : Image du gobelet Lily of the Valley utilisée comme fond en filigrane sur le hero et les headers
 - **Logo circulaire** : border-radius 50% + animation pulsation douce + rotation au survol
-- **8 produits** : 5 originaux + 3 nouveaux (Lunch Box Noire, Balai Spin Mop, Balai Microfibre Plat)
+- **15 produits** : 8 précédents + 7 lunettes (v3)
 - **Prix supprimés** : Remplacés par badge « Prix à venir » sur toutes les pages
 - **Images optimisées** : Conversion en WebP, compression avec Sharp, lazy loading
 - **Numéros de contact corrigés** : Boutique (+226 77 36 77 27) séparé du développeur
@@ -37,7 +52,7 @@ univers-des-merveilles/
 ├── public/
 │   ├── index.html          # Page d'accueil
 │   ├── video.html          # Page vidéo de présentation
-│   ├── produits.html       # Catalogue (8 produits)
+│   ├── produits.html       # Catalogue (15 produits)
 │   ├── produit.html        # Détail produit
 │   ├── a-propos.html       # Notre histoire
 │   ├── contact.html        # Formulaire de contact

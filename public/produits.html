@@ -71,7 +71,7 @@
 
     <!-- Compteur -->
     <p id="compteur" style="text-align:center; color:var(--texte-clair); margin-bottom:1.5rem; font-size:0.9rem;">
-      Affichage de <strong id="nb-produits">8</strong> produits
+      Affichage de <strong id="nb-produits">15</strong> produits
     </p>
 
     <!-- Grille -->
@@ -230,7 +230,7 @@
     });
     genererCartes(getProduitsByCategorie(catParam));
   } else {
-    genererCartes(produits);
+    genererCartes(getProduitsByCategorie(null));
   }
 </script>
 </body>

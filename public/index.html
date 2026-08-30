@@ -125,6 +125,24 @@
 </section>
 
 <!-- ============================================================
+     NOUVEAUTÉS
+     ============================================================ -->
+<section class="section" id="nouveautes-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">✦ Derniers Arrivages ✦</span>
+      <h2 class="section-title">Nos nouveautés</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">Découvrez notre nouvelle collection de lunettes : élégance, protection UV400 et design premium.</p>
+    </div>
+
+    <div class="produits-grid" id="produits-nouveautes">
+      <!-- Générés par JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      PRODUITS VEDETTES
      ============================================================ -->
 <section class="section section-light">
@@ -305,6 +323,48 @@
 <script src="js/produits.js"></script>
 <script src="js/app.js"></script>
 <script>
+  /* Génère le HTML d'une carte produit (réutilisable) */
+  function carteProduitHTML(p) {
+    const lienDetail = `produit.html?id=${p.id}`;
+    return `
+        <article class="produit-card reveal">
+          <div class="produit-image-wrapper">
+            <img src="images/produits/${p.image}" 
+                 alt="${p.nom} – ${p.categorie}" 
+                 loading="lazy"
+                 onerror="this.parentElement.innerHTML='<div class=\\'img-placeholder\\'><span style=\\'font-size:3rem;\\'>🛍️</span><small style=\\'margin-top:0.5rem;\\'>${p.nom}</small></div>'" />
+            <span class="produit-badge" style="background:${p.badgeColor}">${p.badge}</span>
+            <div class="produit-overlay">
+              <a href="${lienDetail}" class="produit-overlay-btn">
+                <i class="fas fa-eye"></i> Voir le détail
+              </a>
+            </div>
+          </div>
+          <div class="produit-info">
+            <span class="produit-categorie">${p.categorie}</span>
+            <h3 class="produit-nom">${p.nom}</h3>
+            <p class="produit-desc">${p.description}</p>
+            <div class="produit-prix-section">
+              <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
+            </div>
+          </div>
+        </article>
+    `;
+  }
+
+  /* Afficher les nouveautés (derniers arrivages) */
+  const gridNouveautes = document.getElementById('produits-nouveautes');
+  if (gridNouveautes) {
+    const nouveautes = (typeof getNouveautes === 'function') ? getNouveautes() : [];
+    if (nouveautes.length > 0) {
+      nouveautes.forEach(p => {
+        gridNouveautes.innerHTML += carteProduitHTML(p);
+      });
+    } else {
+      document.getElementById('nouveautes-section').style.display = 'none';
+    }
+  }
+
   /* Afficher les 6 premiers produits vedettes */
   const grid = document.getElementById('produits-vedettes');
   if (grid) {
