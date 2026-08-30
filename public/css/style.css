@@ -1,22 +1,29 @@
 /* ============================================================
-   L'Univers des Merveilles - Feuille de style principale
+   L'Univers des Merveilles - Feuille de style principale (v2)
+   Design : Luxe neutre – Beige / Blanc cassé / Champagne / Or doux
    Auteur: Marc Lompo | © août 2026, Ouaga BF
    ============================================================ */
 
 /* ---- Variables CSS ---- */
 :root {
-  --or: #d4af37;
-  --or-fonce: #c9a84c;
-  --or-clair: #f0d675;
-  --violet: #6a0dad;
-  --violet-fonce: #4a0080;
-  --violet-clair: #9b59b6;
-  --fond: #f8f9fa;
+  /* Palette principale : tons chauds neutres + or doux */
+  --champagne: #d4a857;
+  --champagne-clair: #e8c97e;
+  --champagne-fonce: #b8892f;
+  --beige: #f5ede0;
+  --beige-fonce: #ede0cc;
+  --creme: #fdf8f2;
   --blanc: #ffffff;
-  --texte: #333333;
-  --titres: #1a1a1a;
-  --gris-clair: #e9ecef;
-  --ombre: rgba(0, 0, 0, 0.1);
+  --texte: #3d2e1e;
+  --texte-clair: #7a6652;
+  --titres: #1e1510;
+  --gris-clair: #e8e0d6;
+  --accent: #8b6343;
+  --accent-clair: #a67c5b;
+  --vert-wax: #4a7c59;
+  --rose-poudre: #d4a0a0;
+  --ombre: rgba(61, 46, 30, 0.08);
+  --ombre-forte: rgba(61, 46, 30, 0.18);
   --transition: 0.3s ease;
   --radius: 12px;
   --radius-lg: 20px;
@@ -35,7 +42,7 @@ html {
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: var(--fond);
+  background-color: var(--creme);
   color: var(--texte);
   line-height: 1.6;
   overflow-x: hidden;
@@ -67,14 +74,14 @@ ul {
    HEADER & NAVIGATION
    ============================================================ */
 header {
-  background: linear-gradient(135deg, var(--violet-fonce) 0%, var(--violet) 50%, #8e24aa 100%);
+  background: linear-gradient(135deg, #2c1a0e 0%, #3d2b18 50%, #4a3520 100%);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(106, 13, 173, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Motif wax en header */
+/* Motif wax discret en header */
 header::before {
   content: '';
   position: absolute;
@@ -82,9 +89,9 @@ header::before {
   background-image: repeating-linear-gradient(
     45deg,
     transparent,
-    transparent 10px,
-    rgba(212, 175, 55, 0.06) 10px,
-    rgba(212, 175, 55, 0.06) 20px
+    transparent 12px,
+    rgba(212, 168, 87, 0.05) 12px,
+    rgba(212, 168, 87, 0.05) 24px
   );
   pointer-events: none;
 }
@@ -107,27 +114,21 @@ nav {
   text-decoration: none;
 }
 
+/* Logo circulaire */
 .nav-logo {
   width: 50px;
   height: 50px;
-  object-fit: contain;
-  transition: transform 0.6s ease;
-  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.5));
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--champagne);
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+  filter: brightness(1.05);
+  box-shadow: 0 2px 10px rgba(212, 168, 87, 0.4);
 }
 
 .nav-logo:hover {
-  transform: rotate(360deg);
-  animation: none;
-}
-
-/* Animation rotation continue du logo */
-@keyframes logoSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.logo-animate {
-  animation: logoSpin 8s linear infinite;
+  transform: rotate(360deg) scale(1.08);
+  box-shadow: 0 4px 20px rgba(212, 168, 87, 0.7);
 }
 
 .nav-brand-text {
@@ -139,14 +140,14 @@ nav {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--or);
+  color: var(--champagne);
   letter-spacing: 0.5px;
   line-height: 1.2;
 }
 
 .nav-brand-slogan {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.6);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -158,7 +159,7 @@ nav {
 }
 
 .nav-links a {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.85);
   font-weight: 500;
   font-size: 0.9rem;
   letter-spacing: 0.3px;
@@ -174,13 +175,14 @@ nav {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--or);
+  background: var(--champagne);
   transition: width var(--transition);
+  border-radius: 2px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--or);
+  color: var(--champagne);
 }
 
 .nav-links a:hover::after,
@@ -204,7 +206,7 @@ nav {
   display: block;
   width: 25px;
   height: 2px;
-  background: var(--or);
+  background: var(--champagne);
   transition: all var(--transition);
   border-radius: 2px;
 }
@@ -214,28 +216,30 @@ nav {
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* ============================================================
-   HERO SECTION (Accueil)
+   HERO SECTION (Accueil) — Fond image gobelet en filigrane
    ============================================================ */
 .hero {
-  background: linear-gradient(135deg, var(--violet-fonce) 0%, var(--violet) 60%, #8e24aa 100%);
+  background:
+    linear-gradient(160deg, rgba(28, 16, 6, 0.88) 0%, rgba(50, 30, 12, 0.82) 40%, rgba(30, 20, 8, 0.90) 100%),
+    url('../images/produits/gobelet-lily-of-the-valley.jpg') center/cover no-repeat;
   padding: 6rem 1.5rem 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
-  min-height: 90vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Motif géométrique wax en background */
+/* Motif wax très discret en overlay */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    repeating-linear-gradient(60deg, transparent, transparent 30px, rgba(212,175,55,0.04) 30px, rgba(212,175,55,0.04) 60px),
-    repeating-linear-gradient(-60deg, transparent, transparent 30px, rgba(255,255,255,0.03) 30px, rgba(255,255,255,0.03) 60px);
+    repeating-linear-gradient(60deg, transparent, transparent 40px, rgba(212,168,87,0.03) 40px, rgba(212,168,87,0.03) 80px),
+    repeating-linear-gradient(-60deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px);
   pointer-events: none;
 }
 
@@ -246,7 +250,7 @@ nav {
   left: 0;
   right: 0;
   height: 80px;
-  background: var(--fond);
+  background: var(--creme);
   clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -260,18 +264,29 @@ nav {
   margin-bottom: 2rem;
 }
 
+/* Logo héro circulaire avec animation pulsation */
 .hero-logo {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 25px rgba(212, 175, 55, 0.6));
-  animation: heroLogoFloat 3s ease-in-out infinite;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--champagne);
+  box-shadow:
+    0 0 0 6px rgba(212, 168, 87, 0.25),
+    0 8px 40px rgba(0, 0, 0, 0.4);
+  animation: heroLogoPulse 3s ease-in-out infinite;
+  margin: 0 auto;
 }
 
-@keyframes heroLogoFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-8px) rotate(3deg); }
-  75% { transform: translateY(-4px) rotate(-3deg); }
+@keyframes heroLogoPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(212,168,87,0.25), 0 8px 40px rgba(0,0,0,0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(212,168,87,0.15), 0 8px 40px rgba(0,0,0,0.4);
+    transform: scale(1.03);
+  }
 }
 
 .hero-title {
@@ -279,11 +294,11 @@ nav {
   font-size: clamp(2rem, 5vw, 3.5rem);
   color: var(--blanc);
   margin-bottom: 0.5rem;
-  text-shadow: 2px 4px 15px rgba(0,0,0,0.3);
+  text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
 }
 
 .hero-title span {
-  color: var(--or);
+  color: var(--champagne);
   display: block;
 }
 
@@ -301,6 +316,7 @@ nav {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
 }
 
 .hero-cta {
@@ -329,15 +345,15 @@ nav {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--or), var(--or-fonce));
-  color: var(--violet-fonce);
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, var(--champagne), var(--champagne-fonce));
+  color: var(--titres);
+  box-shadow: 0 4px 20px rgba(212, 168, 87, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
-  color: var(--violet-fonce);
+  box-shadow: 0 8px 30px rgba(212, 168, 87, 0.6);
+  color: var(--titres);
 }
 
 .btn-outline {
@@ -364,15 +380,18 @@ nav {
   color: var(--blanc);
 }
 
-.btn-violet {
-  background: linear-gradient(135deg, var(--violet), var(--violet-fonce));
+/* Remplace btn-violet par btn-accent (ton brun/champagne) */
+.btn-violet,
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent), #6b4a30);
   color: var(--blanc);
-  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+  box-shadow: 0 4px 15px rgba(139, 99, 67, 0.3);
 }
 
-.btn-violet:hover {
+.btn-violet:hover,
+.btn-accent:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(106, 13, 173, 0.5);
+  box-shadow: 0 8px 25px rgba(139, 99, 67, 0.5);
   color: var(--blanc);
 }
 
@@ -393,7 +412,7 @@ nav {
 }
 
 .section-fond {
-  background: var(--fond);
+  background: var(--beige);
 }
 
 .container {
@@ -412,7 +431,7 @@ nav {
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--or);
+  color: var(--champagne-fonce);
   margin-bottom: 0.75rem;
 }
 
@@ -424,17 +443,17 @@ nav {
 
 .section-desc {
   font-size: 1rem;
-  color: #666;
+  color: var(--texte-clair);
   max-width: 550px;
   margin: 0 auto;
   line-height: 1.7;
 }
 
-/* Séparateur doré */
+/* Séparateur champagne */
 .gold-divider {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, var(--or), var(--or-fonce));
+  background: linear-gradient(90deg, var(--champagne), var(--champagne-fonce));
   margin: 1rem auto;
   border-radius: 2px;
 }
@@ -463,21 +482,21 @@ nav {
 
 .categorie-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(106, 13, 173, 0.15);
-  border-color: var(--or);
+  box-shadow: 0 12px 40px var(--ombre-forte);
+  border-color: var(--champagne);
 }
 
 .categorie-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, var(--violet), #8e24aa);
+  background: linear-gradient(135deg, var(--accent), var(--champagne-fonce));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.25rem;
   font-size: 1.8rem;
-  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+  box-shadow: 0 4px 15px rgba(139, 99, 67, 0.3);
   transition: transform var(--transition);
 }
 
@@ -493,7 +512,7 @@ nav {
 
 .categorie-card p {
   font-size: 0.85rem;
-  color: #777;
+  color: var(--texte-clair);
 }
 
 /* ============================================================
@@ -514,17 +533,20 @@ nav {
   position: relative;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--gris-clair);
 }
 
 .produit-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 45px rgba(106, 13, 173, 0.2);
+  box-shadow: 0 15px 45px var(--ombre-forte);
+  border-color: var(--champagne);
 }
 
 .produit-image-wrapper {
   position: relative;
   overflow: hidden;
   aspect-ratio: 1 / 1;
+  background: var(--beige);
 }
 
 .produit-image-wrapper img {
@@ -536,6 +558,19 @@ nav {
 
 .produit-card:hover .produit-image-wrapper img {
   transform: scale(1.08);
+}
+
+/* Placeholder si image manquante */
+.produit-image-wrapper .img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--beige-fonce), var(--beige));
+  color: var(--texte-clair);
+  font-size: 2.5rem;
 }
 
 .produit-badge {
@@ -555,7 +590,7 @@ nav {
 .produit-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(106, 13, 173, 0.7);
+  background: rgba(30, 21, 10, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -568,13 +603,12 @@ nav {
 }
 
 .produit-overlay-btn {
-  background: var(--or);
-  color: var(--violet-fonce);
+  background: var(--champagne);
+  color: var(--titres);
   padding: 0.7rem 1.5rem;
   border-radius: 50px;
   font-weight: 700;
   font-size: 0.9rem;
-  transition: all var(--transition);
   transform: translateY(20px);
   transition: transform 0.3s ease, background 0.3s ease;
 }
@@ -584,7 +618,7 @@ nav {
 }
 
 .produit-overlay-btn:hover {
-  background: var(--or-clair);
+  background: var(--champagne-clair);
 }
 
 .produit-info {
@@ -599,7 +633,7 @@ nav {
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--violet-clair);
+  color: var(--accent-clair);
   margin-bottom: 0.4rem;
 }
 
@@ -613,11 +647,12 @@ nav {
 
 .produit-desc {
   font-size: 0.82rem;
-  color: #777;
+  color: var(--texte-clair);
   line-height: 1.5;
   margin-bottom: 1rem;
 }
 
+/* Section prix – affiche "Prix à venir" */
 .produit-prix-section {
   display: flex;
   align-items: center;
@@ -627,16 +662,29 @@ nav {
 }
 
 .produit-prix {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--or-fonce);
+  color: var(--accent);
   font-family: 'Playfair Display', serif;
+  font-style: italic;
 }
 
 .produit-prix-pack {
   font-size: 0.78rem;
-  color: #888;
-  text-decoration: line-through;
+  color: #999;
+}
+
+/* Badge "Prix à venir" */
+.badge-prix-venir {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--beige), var(--beige-fonce));
+  color: var(--accent);
+  border: 1px solid var(--champagne);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* ============================================================
@@ -664,10 +712,10 @@ nav {
 
 .filtre-btn:hover,
 .filtre-btn.actif {
-  background: linear-gradient(135deg, var(--violet), #8e24aa);
+  background: linear-gradient(135deg, var(--accent), #6b4a30);
   color: var(--blanc);
-  border-color: var(--violet);
-  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+  border-color: var(--accent);
+  box-shadow: 0 4px 15px rgba(139, 99, 67, 0.3);
   transform: translateY(-2px);
 }
 
@@ -675,22 +723,24 @@ nav {
    HERO PAGE INTERIEURE
    ============================================================ */
 .page-hero {
-  background: linear-gradient(135deg, var(--violet-fonce) 0%, var(--violet) 100%);
+  background:
+    linear-gradient(135deg, rgba(28,16,6,0.92) 0%, rgba(50,30,12,0.88) 100%),
+    url('../images/produits/gobelet-lily-of-the-valley.jpg') center/cover no-repeat;
   padding: 4rem 1.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.page-hero::before {
+/* Séparateur bas de hero page intérieure */
+.page-hero::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    45deg, transparent, transparent 20px,
-    rgba(212,175,55,0.05) 20px, rgba(212,175,55,0.05) 40px
-  );
-  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
 }
 
 .page-hero-title {
@@ -699,6 +749,7 @@ nav {
   color: var(--blanc);
   margin-bottom: 0.75rem;
   position: relative;
+  text-shadow: 2px 4px 15px rgba(0,0,0,0.4);
 }
 
 .page-hero-breadcrumb {
@@ -708,7 +759,7 @@ nav {
 }
 
 .page-hero-breadcrumb a {
-  color: var(--or);
+  color: var(--champagne);
 }
 
 .page-hero-breadcrumb a:hover {
@@ -747,7 +798,7 @@ nav {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--violet-clair);
+  color: var(--accent-clair);
   margin-bottom: 0.75rem;
 }
 
@@ -765,21 +816,27 @@ nav {
   flex-wrap: wrap;
 }
 
+/* Prix à venir – détail produit */
 .prix-principal {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--or-fonce);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent);
   font-family: 'Playfair Display', serif;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--beige), var(--beige-fonce));
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  border: 1px solid var(--champagne);
 }
 
 .prix-pack-label {
-  background: rgba(212, 175, 55, 0.15);
-  color: var(--or-fonce);
+  background: rgba(212, 168, 87, 0.12);
+  color: var(--champagne-fonce);
   padding: 0.4rem 1rem;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
-  border: 1px solid var(--or);
+  border: 1px solid var(--champagne);
 }
 
 .produit-detail-desc {
@@ -787,7 +844,7 @@ nav {
   line-height: 1.8;
   color: #555;
   margin-bottom: 2rem;
-  border-left: 3px solid var(--or);
+  border-left: 3px solid var(--champagne);
   padding-left: 1rem;
 }
 
@@ -808,7 +865,7 @@ nav {
    NEWSLETTER
    ============================================================ */
 .newsletter-section {
-  background: linear-gradient(135deg, var(--violet-fonce), #8e24aa);
+  background: linear-gradient(135deg, #2c1a0e, #4a3520);
   padding: 5rem 1.5rem;
   text-align: center;
   position: relative;
@@ -821,8 +878,17 @@ nav {
   inset: 0;
   background-image: repeating-linear-gradient(
     -45deg, transparent, transparent 15px,
-    rgba(212,175,55,0.05) 15px, rgba(212,175,55,0.05) 30px
+    rgba(212,168,87,0.04) 15px, rgba(212,168,87,0.04) 30px
   );
+}
+
+/* Ligne décorative haut */
+.newsletter-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
 }
 
 .newsletter-title {
@@ -834,7 +900,7 @@ nav {
 }
 
 .newsletter-desc {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.75);
   margin-bottom: 2rem;
   font-size: 1rem;
   position: relative;
@@ -852,8 +918,8 @@ nav {
   flex: 1;
   padding: 0.9rem 1.5rem;
   border-radius: 50px;
-  border: 2px solid rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(212, 168, 87, 0.35);
+  background: rgba(255,255,255,0.08);
   color: var(--blanc);
   font-size: 0.95rem;
   outline: none;
@@ -861,19 +927,19 @@ nav {
 }
 
 .newsletter-input::placeholder {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.55);
 }
 
 .newsletter-input:focus {
-  border-color: var(--or);
+  border-color: var(--champagne);
 }
 
 /* ============================================================
    FOOTER
    ============================================================ */
 footer {
-  background: linear-gradient(135deg, #1a0035, var(--violet-fonce));
-  color: rgba(255,255,255,0.8);
+  background: linear-gradient(135deg, #160d04, #2c1a0e);
+  color: rgba(255,255,255,0.75);
   padding: 4rem 1.5rem 2rem;
   position: relative;
   overflow: hidden;
@@ -884,7 +950,7 @@ footer::before {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--or), var(--violet-clair), var(--or));
+  background: linear-gradient(90deg, var(--champagne), var(--accent-clair), var(--champagne));
 }
 
 .footer-grid {
@@ -908,22 +974,26 @@ footer::before {
   gap: 0.75rem;
 }
 
+/* Logo footer circulaire */
 .footer-logo {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--champagne);
+  box-shadow: 0 2px 10px rgba(212, 168, 87, 0.3);
 }
 
 .footer-brand-name {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
-  color: var(--or);
+  color: var(--champagne);
 }
 
 .footer-desc {
   font-size: 0.88rem;
   line-height: 1.7;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.6);
 }
 
 .footer-socials {
@@ -939,22 +1009,22 @@ footer::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.08);
   color: var(--blanc);
   transition: all var(--transition);
   font-size: 0.95rem;
 }
 
 .social-link:hover {
-  background: var(--or);
-  color: var(--violet-fonce);
+  background: var(--champagne);
+  color: var(--titres);
   transform: translateY(-3px);
 }
 
 .footer-col h4 {
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
-  color: var(--or);
+  color: var(--champagne);
   margin-bottom: 1.25rem;
   position: relative;
   padding-bottom: 0.5rem;
@@ -967,7 +1037,7 @@ footer::before {
   left: 0;
   width: 30px;
   height: 2px;
-  background: var(--or);
+  background: var(--champagne);
 }
 
 .footer-col ul {
@@ -978,7 +1048,7 @@ footer::before {
 
 .footer-col ul li a {
   font-size: 0.88rem;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.6);
   transition: color var(--transition);
   display: flex;
   align-items: center;
@@ -986,7 +1056,7 @@ footer::before {
 }
 
 .footer-col ul li a:hover {
-  color: var(--or);
+  color: var(--champagne);
 }
 
 .footer-contact-item {
@@ -995,11 +1065,11 @@ footer::before {
   gap: 0.75rem;
   margin-bottom: 0.85rem;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.6);
 }
 
 .footer-contact-item i {
-  color: var(--or);
+  color: var(--champagne);
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -1008,18 +1078,18 @@ footer::before {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.45);
 }
 
 .footer-bottom a {
-  color: var(--or);
+  color: var(--champagne);
 }
 
 /* ============================================================
@@ -1042,6 +1112,7 @@ footer::before {
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
+  animation: waPulse 2.5s ease-in-out infinite;
 }
 
 .whatsapp-float:hover {
@@ -1058,10 +1129,6 @@ footer::before {
 @keyframes waPulse {
   0%, 100% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
   50% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.8), 0 0 0 10px rgba(37, 211, 102, 0.1); }
-}
-
-.whatsapp-float {
-  animation: waPulse 2.5s ease-in-out infinite;
 }
 
 /* ============================================================
@@ -1093,8 +1160,8 @@ footer::before {
 }
 
 .form-control:focus {
-  border-color: var(--violet);
-  box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+  border-color: var(--champagne);
+  box-shadow: 0 0 0 3px rgba(212, 168, 87, 0.15);
 }
 
 .form-control.is-valid { border-color: #27ae60; }
@@ -1121,16 +1188,19 @@ textarea.form-control {
   box-shadow: 0 6px 25px var(--ombre);
   text-align: center;
   transition: transform var(--transition);
+  border: 1px solid var(--gris-clair);
 }
 
 .info-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 40px var(--ombre-forte);
+  border-color: var(--champagne);
 }
 
 .info-card-icon {
   width: 65px;
   height: 65px;
-  background: linear-gradient(135deg, var(--violet), #8e24aa);
+  background: linear-gradient(135deg, var(--accent), var(--champagne-fonce));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1148,12 +1218,12 @@ textarea.form-control {
 
 .info-card p, .info-card a {
   font-size: 0.92rem;
-  color: #666;
+  color: var(--texte-clair);
   line-height: 1.6;
 }
 
 .info-card a:hover {
-  color: var(--violet);
+  color: var(--accent);
 }
 
 /* ============================================================
@@ -1171,19 +1241,26 @@ textarea.form-control {
   background: var(--blanc);
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 20px var(--ombre);
+  border: 1px solid var(--gris-clair);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--champagne);
 }
 
 .stat-number {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--or-fonce);
+  color: var(--champagne-fonce);
   display: block;
 }
 
 .stat-label {
   font-size: 0.85rem;
-  color: #777;
+  color: var(--texte-clair);
   margin-top: 0.25rem;
 }
 
@@ -1201,12 +1278,13 @@ textarea.form-control {
   background: var(--blanc);
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 20px var(--ombre);
-  border-top: 4px solid var(--or);
-  transition: transform var(--transition);
+  border-top: 4px solid var(--champagne);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .valeur-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 40px var(--ombre-forte);
 }
 
 .valeur-icon {
@@ -1217,12 +1295,12 @@ textarea.form-control {
 .valeur-card h3 {
   font-size: 1.15rem;
   margin-bottom: 0.75rem;
-  color: var(--violet);
+  color: var(--accent);
 }
 
 .valeur-card p {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--texte-clair);
   line-height: 1.6;
 }
 
@@ -1246,7 +1324,7 @@ textarea.form-control {
    PRODUITS SIMILAIRES
    ============================================================ */
 .similaires-section {
-  background: var(--fond);
+  background: var(--beige);
   padding: 4rem 1.5rem;
 }
 
@@ -1266,7 +1344,7 @@ textarea.form-control {
 }
 
 .empty-state p {
-  color: #999;
+  color: var(--texte-clair);
   font-size: 1rem;
 }
 
@@ -1334,6 +1412,26 @@ textarea.form-control {
 .toast.error { border-left: 4px solid #e74c3c; }
 
 /* ============================================================
+   DÉCORATIONS WAX — Bordures et séparateurs discrets
+   ============================================================ */
+.wax-border {
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--champagne) 0px,
+    var(--champagne) 10px,
+    var(--accent) 10px,
+    var(--accent) 20px,
+    var(--beige-fonce) 20px,
+    var(--beige-fonce) 30px,
+    var(--vert-wax) 30px,
+    var(--vert-wax) 40px
+  );
+  opacity: 0.6;
+  width: 100%;
+}
+
+/* ============================================================
    RESPONSIVE - TABLETTE
    ============================================================ */
 @media (max-width: 992px) {
@@ -1374,13 +1472,13 @@ textarea.form-control {
     top: 75px;
     left: 0;
     right: 0;
-    background: var(--violet-fonce);
+    background: #2c1a0e;
     flex-direction: column;
     padding: 2rem 1.5rem;
     gap: 1.5rem;
     z-index: 1000;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    border-top: 1px solid rgba(212,175,55,0.3);
+    border-top: 1px solid rgba(212,168,87,0.3);
   }
 
   .nav-links.open {

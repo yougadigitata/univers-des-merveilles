@@ -1,117 +1,147 @@
-# L'Univers des Merveilles 🌟
+# L'Univers des Merveilles
 
-## À propos
-Boutique en ligne de produits de beauté, accessoires de luxe et articles ménagers modernes pour la femme africaine moderne.
+## 📌 Présentation
 
-## URLs
-- **GitHub Pages** : https://yougadigitata.github.io/univers-des-merveilles/
-- **GitHub** : https://github.com/yougadigitata/univers-des-merveilles
-- **WhatsApp** : https://wa.me/22677367727
+Boutique en ligne spécialisée dans la vente de produits et d'accessoires de beauté modernes,
+conçus pour la femme africaine moderne. Basée à **Ouagadougou, Burkina Faso**.
 
-## Fonctionnalités disponibles
-- ✅ Page d'accueil avec héro animé, catégories, produits vedettes, newsletter
-- ✅ Catalogue produits avec filtres par catégorie (Tous / Protection / Maison & Cuisine / Mode & Luxe)
-- ✅ Page de détail produit dynamique (via paramètre URL `?id=`)
-- ✅ Section produits similaires
-- ✅ Lien WhatsApp pré-rempli sur chaque produit
-- ✅ Page À propos (histoire, mission, valeurs, équipe)
-- ✅ Page Contact avec formulaire validé, Google Maps, informations de contact
-- ✅ Bouton WhatsApp flottant sur toutes les pages
-- ✅ Design responsive (mobile-first)
-- ✅ Animations au scroll (Intersection Observer)
-- ✅ Logo animé flottant
-- ✅ Menu hamburger mobile
-- ✅ Newsletter (validation côté client)
+---
 
-## Catalogue Produits
+## ✅ Fonctionnalités implémentées (v2)
 
-| ID | Nom | Catégorie | Prix | Pack |
-|----|-----|-----------|------|------|
-| 1 | Lunettes UV Oversize | Protection | 3 500 FCFA | 6 000 FCFA (2 paires) |
-| 2 | Gobelet Lily Of The Valley | Maison & Cuisine | 2 800 FCFA | – |
-| 3 | Lunch Box Électrique | Maison & Cuisine | 7 200 FCFA | – |
-| 4 | Coffret à Bijoux Vert | Mode & Luxe | 5 500 FCFA | – |
-| 5 | Sac de Plage Tropical | Mode & Luxe | 4 200 FCFA | – |
+- **Refonte graphique complète** : Palette beige / blanc cassé / champagne / tons chauds (plus de violet)
+- **Fond héro** : Image du gobelet Lily of the Valley utilisée comme fond en filigrane sur le hero et les headers
+- **Logo circulaire** : border-radius 50% + animation pulsation douce + rotation au survol
+- **8 produits** : 5 originaux + 3 nouveaux (Lunch Box Noire, Balai Spin Mop, Balai Microfibre Plat)
+- **Prix supprimés** : Remplacés par badge « Prix à venir » sur toutes les pages
+- **Images optimisées** : Conversion en WebP, compression avec Sharp, lazy loading
+- **Numéros de contact corrigés** : Boutique (+226 77 36 77 27) séparé du développeur
+- **Déploiement Cloudflare Pages** uniquement (workflow GitHub Pages supprimé)
+- **Bordures décoratives wax** : Motifs africains subtils en séparateurs
+- **Responsive** : Mobile, tablette, desktop
 
-## Charte graphique
-- **Couleurs** : Violet (#6a0dad) + Or (#d4af37) sur fond gris clair (#f8f9fa)
-- **Polices** : Playfair Display (titres) + Lato (corps)
-- **Motifs** : Géométriques africains (wax) en CSS
+---
 
-## Structure du projet
+## 🌐 URLs
+
+- **Production Cloudflare Pages** : https://univers-des-merveilles.pages.dev
+- **Dépôt GitHub** : https://github.com/yougadigitata/univers-des-merveilles
+
+---
+
+## 📂 Structure du projet
 
 ```
 univers-des-merveilles/
 ├── public/
-│   ├── index.html          # Accueil
-│   ├── produits.html       # Catalogue avec filtres
-│   ├── produit.html        # Détail produit (dynamique)
-│   ├── a-propos.html       # À propos
-│   ├── contact.html        # Contact + formulaire + carte
-│   ├── css/
-│   │   └── style.css       # Styles globaux
+│   ├── index.html          # Page d'accueil
+│   ├── produits.html       # Catalogue (8 produits)
+│   ├── produit.html        # Détail produit
+│   ├── a-propos.html       # Notre histoire
+│   ├── contact.html        # Formulaire de contact
+│   ├── css/style.css       # Feuille de style principale (v2)
 │   ├── js/
-│   │   ├── produits.js     # Données produits (ajouter ici)
+│   │   ├── produits.js     # Données produits (sans prix)
 │   │   └── app.js          # Scripts communs
 │   └── images/
-│       ├── logo/           # Logo de la marque
-│       └── produits/       # Images des produits
+│       ├── logo/           # Logo boutique
+│       └── produits/       # Images optimisées WebP
+├── dist/                   # Build de production (généré)
 ├── .github/workflows/
-│   └── deploy.yml          # Déploiement GitHub Pages
-├── build.mjs               # Script de build
-├── package.json
-└── wrangler.jsonc          # Config Cloudflare Pages
+│   └── deploy.yml          # Déploiement automatique Cloudflare Pages
+├── ecosystem.config.cjs    # Configuration PM2 (développement sandbox)
+├── vite.config.ts          # Config build Vite
+├── wrangler.jsonc          # Config Cloudflare Workers
+└── package.json
 ```
-
-## Ajouter un nouveau produit
-
-Éditez le fichier `public/js/produits.js` et ajoutez un objet dans le tableau `produits` :
-
-```javascript
-{
-  id: 6,                          // ID unique (incrémental)
-  nom: "Nom du produit",          // Nom affiché
-  categorie: "Mode & Luxe",       // Protection | Maison & Cuisine | Mode & Luxe
-  prix: 4500,                     // Prix en FCFA (nombre entier)
-  prixPack: null,                 // null ou prix du pack
-  prixPackLabel: null,            // null ou "Pack 2 pièces"
-  description: "Description courte pour la carte produit.",
-  descriptionComplete: `Description longue pour la page de détail.`,
-  image: "mon-produit.jpg",       // Fichier dans images/produits/
-  badge: "Nouveau",               // Texte du badge
-  badgeColor: "#9b59b6"           // Couleur HEX du badge
-}
-```
-
-Puis placez l'image dans `public/images/produits/` et relancez `npm run build`.
-
-## Déploiement
-
-### GitHub Pages (automatique)
-Chaque push sur `main` déclenche automatiquement le workflow GitHub Actions.
-
-### Cloudflare Pages (via token)
-```bash
-npm run build
-npx wrangler pages deploy dist --project-name univers-des-merveilles
-```
-
-## Installation locale
-
-```bash
-git clone https://github.com/yougadigitata/univers-des-merveilles.git
-cd univers-des-merveilles
-npm install
-npm run build
-npm run preview  # Prévisualisation locale sur http://localhost:3000
-```
-
-## Contact
-
-- **Boutique** : +226 77 36 77 27 (WhatsApp)
-- **Adresse** : Saaba, à 150 m côté Est de l'USTA, Ouagadougou, Burkina Faso
-- **Développeur** : Marc Lompo – +226 72 66 21 61
 
 ---
 
-**© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.**
+## 🎨 Charte graphique v2
+
+| Élément | Valeur |
+|---------|--------|
+| Fond principal | `#fdf8f2` (crème) |
+| Sections alternées | `#f5ede0` (beige) |
+| Accent principal | `#d4a857` (champagne) |
+| Texte titres | `#1e1510` (brun foncé) |
+| Fond header/footer | `#2c1a0e → #3d2b18` |
+| Polices | Playfair Display + Lato |
+
+---
+
+## 🛍️ Catalogue produits
+
+| ID | Nom | Catégorie | Prix |
+|----|-----|-----------|------|
+| 1 | Lunettes UV Oversize | Protection | À venir |
+| 2 | Gobelet Lily Of The Valley | Maison & Cuisine | À venir |
+| 3 | Lunch Box Électrique Rose | Maison & Cuisine | À venir |
+| 4 | Lunch Box Électrique Noire | Maison & Cuisine | À venir |
+| 5 | Balai Serpillière Rotatif | Maison & Cuisine | À venir |
+| 6 | Balai Microfibre Plat | Maison & Cuisine | À venir |
+| 7 | Coffret à Bijoux Vert | Mode & Luxe | À venir |
+| 8 | Sac de Plage Tropical | Mode & Luxe | À venir |
+
+> Les vrais prix seront intégrés dans `public/js/produits.js` dès confirmation.
+
+---
+
+## 📞 Contacts
+
+| Rôle | Numéro |
+|------|--------|
+| **Boutique (WhatsApp)** | +226 77 36 77 27 |
+| **Développeur (Marc Lompo)** | +226 72 66 21 61 |
+| **Adresse** | Saaba, 150 m Est de l'USTA, Ouagadougou, BF |
+
+---
+
+## 🚀 Déploiement
+
+### Automatique (GitHub Actions → Cloudflare Pages)
+
+Tout push sur la branche `main` déclenche automatiquement le déploiement.
+
+**Secrets GitHub requis :**
+- `CF_API_TOKEN` = Token Cloudflare API
+- `CF_ACCOUNT_ID` = ID du compte Cloudflare
+
+### Commandes de build
+
+```bash
+# Installer les dépendances
+npm install
+
+# Builder le projet
+npm run build
+
+# Développement local (sandbox)
+pm2 start ecosystem.config.cjs
+```
+
+---
+
+## 📸 Optimisation des images
+
+```bash
+# Convertir et compresser toutes les images en WebP
+node optimize-images.mjs
+```
+
+---
+
+## 📝 Notes de mise à jour (v2 – août 2026)
+
+- Refonte graphique : suppression du violet, adoption palette beige/champagne
+- Logo circulaire avec animations
+- Suppression de tous les prix (remplacés par « Prix à venir »)
+- Ajout de 3 nouveaux produits avec leurs images
+- Conversion de toutes les images en WebP (gain ~70%)
+- Workflow GitHub Actions migré de GitHub Pages vers Cloudflare Pages
+- Correction numéros : boutique vs développeur bien distingués
+
+---
+
+*© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.*  
+*Développeur : Marc Lompo – +226 72 66 21 61*
