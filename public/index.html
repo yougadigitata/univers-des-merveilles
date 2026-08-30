@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>L'Univers des Merveilles – Beauté, Accessoires & Art de Vivre</title>
   <meta name="description" content="Boutique en ligne de produits de beauté, accessoires de luxe et articles ménagers modernes. Livraison à Ouagadougou et alentours." />
-  <meta name="theme-color" content="#6a0dad" />
+  <meta name="theme-color" content="#d4a857" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="images/logo/logo-univers-merveilles.webp" />
@@ -55,12 +55,12 @@
 </header>
 
 <!-- ============================================================
-     SECTION HÉRO
+     SECTION HÉRO — fond : image gobelet en filigrane
      ============================================================ -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-logo-container">
-      <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="hero-logo" />
+      <img src="images/logo/logo-univers-merveilles.webp" alt="Logo L'Univers des Merveilles" class="hero-logo" />
     </div>
     <h1 class="hero-title">
       L'Univers des
@@ -81,6 +81,9 @@
     </div>
   </div>
 </section>
+
+<!-- Bordure décorative wax -->
+<div class="wax-border"></div>
 
 <!-- ============================================================
      CATÉGORIES
@@ -106,10 +109,10 @@
       <a href="produits.html?categorie=Maison+%26+Cuisine" class="categorie-card reveal">
         <div class="categorie-icon">🏠</div>
         <h3>Maison & Cuisine</h3>
-        <p>Gobelets, lunch box, électroménager</p>
+        <p>Gobelets, lunch box, balais, électroménager</p>
       </a>
       <a href="produits.html?categorie=Mode+%26+Luxe" class="categorie-card reveal">
-        <div class="categorie-icon">💜</div>
+        <div class="categorie-icon">👜</div>
         <h3>Mode & Luxe</h3>
         <p>Sacs, coffrets à bijoux, accessoires</p>
       </a>
@@ -126,7 +129,7 @@
       <span class="section-label">✦ Sélection du Moment ✦</span>
       <h2 class="section-title">Nos produits phares</h2>
       <div class="gold-divider"></div>
-      <p class="section-desc">Des produits soigneusement sélectionnés pour vous offrir le meilleur rapport qualité-prix.</p>
+      <p class="section-desc">Des produits soigneusement sélectionnés pour vous offrir le meilleur de la qualité et du style.</p>
     </div>
 
     <div class="produits-grid" id="produits-vedettes">
@@ -134,7 +137,7 @@
     </div>
 
     <div style="text-align:center; margin-top:3rem;" class="reveal">
-      <a href="produits.html" class="btn btn-violet">
+      <a href="produits.html" class="btn btn-accent">
         <i class="fas fa-arrow-right"></i> Voir tous nos produits
       </a>
     </div>
@@ -154,7 +157,7 @@
 
     <div class="stats-grid">
       <div class="stat-card reveal">
-        <span class="stat-number">5+</span>
+        <span class="stat-number">8+</span>
         <span class="stat-label">Produits sélectionnés</span>
       </div>
       <div class="stat-card reveal">
@@ -196,7 +199,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="footer-logo-wrap">
-        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" />
+        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo L'Univers des Merveilles" class="footer-logo" loading="lazy" />
         <span class="footer-brand-name">L'Univers des Merveilles</span>
       </div>
       <p class="footer-desc">
@@ -246,16 +249,12 @@
         <i class="fab fa-whatsapp"></i>
         <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
       </div>
-      <div class="footer-contact-item">
-        <i class="fas fa-phone"></i>
-        <span>+226 72 66 21 61</span>
-      </div>
     </div>
   </div>
 
   <div class="footer-bottom">
     <span>© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.</span>
-    <span>Développé par <a href="tel:+22672662161">Marc Lompo</a></span>
+    <span>Développeur : Marc Lompo – +226 72 66 21 61</span>
   </div>
 </footer>
 
@@ -269,16 +268,20 @@
 <script src="js/produits.js"></script>
 <script src="js/app.js"></script>
 <script>
-  /* Afficher les produits vedettes */
+  /* Afficher les 6 premiers produits vedettes */
   const grid = document.getElementById('produits-vedettes');
   if (grid) {
-    produits.forEach(p => {
+    const vedettes = produits.slice(0, 6);
+    vedettes.forEach(p => {
       const lienDetail = `produit.html?id=${p.id}`;
       const lienWA = getWhatsAppLink(p);
       grid.innerHTML += `
         <article class="produit-card reveal">
           <div class="produit-image-wrapper">
-            <img src="images/produits/${p.image}" alt="${p.nom}" loading="lazy" />
+            <img src="images/produits/${p.image}" 
+                 alt="${p.nom}" 
+                 loading="lazy"
+                 onerror="this.parentElement.innerHTML='<div class=\\'img-placeholder\\'><span style=\\'font-size:3rem;\\'>🛍️</span><small style=\\'margin-top:0.5rem;\\'>${p.nom}</small></div>'" />
             <span class="produit-badge" style="background:${p.badgeColor}">${p.badge}</span>
             <div class="produit-overlay">
               <a href="${lienDetail}" class="produit-overlay-btn">
@@ -291,15 +294,14 @@
             <h3 class="produit-nom">${p.nom}</h3>
             <p class="produit-desc">${p.description}</p>
             <div class="produit-prix-section">
-              <span class="produit-prix">${formatPrix(p.prix)}</span>
-              ${p.prixPack ? `<span class="produit-prix-pack">${p.prixPackLabel}: ${formatPrix(p.prixPack)}</span>` : ''}
+              <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
             </div>
           </div>
         </article>
       `;
     });
 
-    // Re-observer les nouvelles cartes
+    /* Re-observer les nouvelles cartes */
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
 </script>

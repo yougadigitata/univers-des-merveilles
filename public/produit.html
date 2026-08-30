@@ -50,6 +50,9 @@
   </p>
 </section>
 
+<!-- Bordure décorative wax -->
+<div class="wax-border"></div>
+
 <!-- DÉTAIL PRODUIT -->
 <section class="section section-fond" id="detail-section">
   <div class="container">
@@ -76,7 +79,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="footer-logo-wrap">
-        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" />
+        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" loading="lazy" />
         <span class="footer-brand-name">L'Univers des Merveilles</span>
       </div>
       <p class="footer-desc">
@@ -119,7 +122,7 @@
   </div>
   <div class="footer-bottom">
     <span>© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.</span>
-    <span>Développé par <a href="tel:+22672662161">Marc Lompo</a></span>
+    <span>Développeur : Marc Lompo – +226 72 66 21 61</span>
   </div>
 </footer>
 
@@ -145,14 +148,14 @@
         <div style="text-align:center;padding:4rem;grid-column:1/-1;">
           <i class="fas fa-exclamation-triangle" style="font-size:3rem;color:#e74c3c;margin-bottom:1rem;display:block;"></i>
           <h2>Produit introuvable</h2>
-          <p style="color:#777;margin:1rem 0;">Ce produit n'existe pas ou a été retiré.</p>
-          <a href="produits.html" class="btn btn-violet">
+          <p style="color:var(--texte-clair);margin:1rem 0;">Ce produit n'existe pas ou a été retiré.</p>
+          <a href="produits.html" class="btn btn-accent">
             <i class="fas fa-arrow-left"></i> Retour aux produits
           </a>
         </div>
       `;
     } else {
-      // Mettre à jour le titre
+      /* Mettre à jour le titre */
       document.title = `${p.nom} – L'Univers des Merveilles`;
       document.getElementById('page-title').textContent = `${p.nom} – L'Univers des Merveilles`;
       document.getElementById('hero-nom').textContent = p.nom;
@@ -162,7 +165,9 @@
 
       detail.innerHTML = `
         <div class="produit-detail-image reveal-left">
-          <img src="images/produits/${p.image}" alt="${p.nom}" />
+          <img src="images/produits/${p.image}" 
+               alt="${p.nom}"
+               onerror="this.parentElement.style.background='var(--beige)'; this.style.display='none';" />
         </div>
         <div class="produit-detail-info reveal-right">
           <p class="produit-detail-categorie">
@@ -170,36 +175,39 @@
           </p>
           <h1 class="produit-detail-nom">${p.nom}</h1>
           
+          <!-- Prix à venir -->
           <div class="produit-detail-prix">
-            <span class="prix-principal">${formatPrix(p.prix)}</span>
-            ${p.prixPack ? `
-              <span class="prix-pack-label">
-                <i class="fas fa-gift"></i> ${p.prixPackLabel}: ${formatPrix(p.prixPack)}
-              </span>
-            ` : ''}
+            <span class="prix-principal">
+              <i class="fas fa-clock" style="margin-right:0.4rem;"></i>Prix à venir
+            </span>
           </div>
+
+          <p style="font-size:0.85rem;color:var(--texte-clair);margin-bottom:1.5rem;font-style:italic;">
+            <i class="fas fa-info-circle" style="color:var(--champagne-fonce);margin-right:0.3rem;"></i>
+            Le prix sera communiqué prochainement. Contactez-nous sur WhatsApp pour plus d'informations.
+          </p>
 
           <p class="produit-detail-desc">${p.descriptionComplete}</p>
 
           <div class="produit-detail-actions">
             <a href="${waLink}" target="_blank" class="btn btn-whatsapp">
-              <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+              <i class="fab fa-whatsapp"></i> Demander le prix via WhatsApp
             </a>
-            <a href="produits.html" class="btn btn-outline" style="color:var(--violet);border-color:var(--violet);">
+            <a href="produits.html" class="btn btn-outline" style="color:var(--accent);border-color:var(--accent);">
               <i class="fas fa-arrow-left"></i> Retour aux produits
             </a>
           </div>
 
-          <div style="margin-top:2rem;padding:1.25rem;background:rgba(212,175,55,0.08);border-radius:12px;border:1px solid rgba(212,175,55,0.3);">
-            <p style="font-size:0.85rem;color:#777;display:flex;align-items:center;gap:0.5rem;">
-              <i class="fas fa-shield-alt" style="color:var(--or);"></i>
+          <div style="margin-top:2rem;padding:1.25rem;background:var(--beige);border-radius:12px;border:1px solid var(--champagne);">
+            <p style="font-size:0.85rem;color:var(--texte-clair);display:flex;align-items:center;gap:0.5rem;">
+              <i class="fas fa-shield-alt" style="color:var(--champagne-fonce);"></i>
               Paiement sécurisé à la livraison · Livraison à Ouagadougou et alentours
             </p>
           </div>
         </div>
       `;
 
-      // Produits similaires
+      /* Produits similaires */
       const similaires = getProduitsSimilaires(p.id, p.categorie);
       if (similaires.length > 0) {
         const simSection = document.getElementById('similaires-section');
@@ -210,7 +218,10 @@
           simGrid.innerHTML += `
             <article class="produit-card reveal">
               <div class="produit-image-wrapper">
-                <img src="images/produits/${sim.image}" alt="${sim.nom}" loading="lazy" />
+                <img src="images/produits/${sim.image}" 
+                     alt="${sim.nom}" 
+                     loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\\'img-placeholder\\'><span style=\\'font-size:3rem;\\'>🛍️</span></div>'" />
                 <span class="produit-badge" style="background:${sim.badgeColor}">${sim.badge}</span>
                 <div class="produit-overlay">
                   <a href="produit.html?id=${sim.id}" class="produit-overlay-btn">
@@ -223,7 +234,7 @@
                 <h3 class="produit-nom">${sim.nom}</h3>
                 <p class="produit-desc">${sim.description}</p>
                 <div class="produit-prix-section">
-                  <span class="produit-prix">${formatPrix(sim.prix)}</span>
+                  <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
                 </div>
               </div>
             </article>
@@ -233,7 +244,7 @@
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
       }
 
-      // Observer les éléments du détail
+      /* Observer les éléments du détail */
       document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
     }
   }

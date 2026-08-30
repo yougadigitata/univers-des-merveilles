@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produits – L'Univers des Merveilles</title>
-  <meta name="description" content="Découvrez notre catalogue complet : lunettes UV, coffrets à bijoux, gobelets, lunch box, sacs de plage et bien plus." />
+  <meta name="description" content="Découvrez notre catalogue complet : lunettes UV, coffrets à bijoux, gobelets, lunch box, balais et bien plus." />
   <link rel="icon" type="image/webp" href="images/logo/logo-univers-merveilles.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -46,6 +46,9 @@
   </p>
 </section>
 
+<!-- Bordure décorative wax -->
+<div class="wax-border"></div>
+
 <!-- CATALOGUE -->
 <section class="section section-fond">
   <div class="container">
@@ -61,13 +64,13 @@
         🏠 Maison & Cuisine
       </button>
       <button class="filtre-btn" data-categorie="Mode & Luxe">
-        💜 Mode & Luxe
+        👜 Mode & Luxe
       </button>
     </div>
 
     <!-- Compteur -->
-    <p id="compteur" style="text-align:center; color:#888; margin-bottom:1.5rem; font-size:0.9rem;">
-      Affichage de <strong id="nb-produits">5</strong> produits
+    <p id="compteur" style="text-align:center; color:var(--texte-clair); margin-bottom:1.5rem; font-size:0.9rem;">
+      Affichage de <strong id="nb-produits">8</strong> produits
     </p>
 
     <!-- Grille -->
@@ -96,7 +99,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="footer-logo-wrap">
-        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" />
+        <img src="images/logo/logo-univers-merveilles.webp" alt="Logo" class="footer-logo" loading="lazy" />
         <span class="footer-brand-name">L'Univers des Merveilles</span>
       </div>
       <p class="footer-desc">
@@ -139,7 +142,7 @@
   </div>
   <div class="footer-bottom">
     <span>© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.</span>
-    <span>Développé par <a href="tel:+22672662161">Marc Lompo</a></span>
+    <span>Développeur : Marc Lompo – +226 72 66 21 61</span>
   </div>
 </footer>
 
@@ -176,7 +179,10 @@
       card.style.animationDelay = `${i * 0.07}s`;
       card.innerHTML = `
         <div class="produit-image-wrapper">
-          <img src="images/produits/${p.image}" alt="${p.nom}" loading="lazy" />
+          <img src="images/produits/${p.image}" 
+               alt="${p.nom}" 
+               loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\\'img-placeholder\\'><span style=\\'font-size:3rem;\\'>🛍️</span><small style=\\'margin-top:0.5rem;\\'>${p.nom}</small></div>'" />
           <span class="produit-badge" style="background:${p.badgeColor}">${p.badge}</span>
           <div class="produit-overlay">
             <a href="${lienDetail}" class="produit-overlay-btn">
@@ -189,19 +195,18 @@
           <h3 class="produit-nom">${p.nom}</h3>
           <p class="produit-desc">${p.description}</p>
           <div class="produit-prix-section">
-            <span class="produit-prix">${formatPrix(p.prix)}</span>
-            ${p.prixPack ? `<span style="font-size:0.78rem;color:#e67e22;font-weight:600;">Pack: ${formatPrix(p.prixPack)}</span>` : ''}
+            <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
           </div>
         </div>
       `;
       grid.appendChild(card);
     });
 
-    // Observer les nouvelles cartes
+    /* Observer les nouvelles cartes */
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
 
-  // Filtres
+  /* Filtres */
   const filtresBtns = document.querySelectorAll('.filtre-btn');
   filtresBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -212,7 +217,7 @@
     });
   });
 
-  // Lire le paramètre catégorie dans l'URL
+  /* Lire le paramètre catégorie dans l'URL */
   const urlParams = new URLSearchParams(window.location.search);
   const catParam = urlParams.get('categorie');
   if (catParam) {
