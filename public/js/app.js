@@ -121,3 +121,62 @@ if (navLogo) {
     }
   });
 }
+
+/* ============================================================
+   ANIMATION D'OUVERTURE DU LOGO (rotation 160° + jaillissement d'étoiles)
+   Se joue une fois au chargement de chaque page, sur le logo du menu
+   et, sur l'accueil, sur le grand logo du hero.
+   ============================================================ */
+function faireJaillirEtoiles(el, nbEtoiles = 8) {
+  if (!el) return;
+  const rect = el.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  const symboles = ['⭐', '✨', '🌟'];
+
+  for (let i = 0; i < nbEtoiles; i++) {
+    const star = document.createElement('span');
+    star.className = 'logo-star';
+    star.textContent = symboles[i % symboles.length];
+
+    const angle = (360 / nbEtoiles) * i + (Math.random() * 20 - 10);
+    const distance = 55 + Math.random() * 35;
+    const rad = (angle * Math.PI) / 180;
+    const tx = Math.cos(rad) * distance;
+    const ty = Math.sin(rad) * distance;
+
+    star.style.left = `${centerX}px`;
+    star.style.top = `${centerY}px`;
+    star.style.setProperty('--tx', `${tx}px`);
+    star.style.setProperty('--ty', `${ty}px`);
+    star.style.animationDelay = `${i * 0.03}s`;
+
+    document.body.appendChild(star);
+    setTimeout(() => star.remove(), 1200);
+  }
+}
+
+function animerLogoIntro(selecteur, nbEtoiles) {
+  const logo = document.querySelector(selecteur);
+  if (!logo) return;
+
+  const declencher = () => {
+    logo.classList.add('logo-intro-spin');
+    setTimeout(() => faireJaillirEtoiles(logo, nbEtoiles), 1100);
+    logo.addEventListener('animationend', () => {
+      logo.classList.remove('logo-intro-spin');
+    }, { once: true });
+  };
+
+  // S'assurer que l'image (et sa taille réelle) est chargée avant de calculer la position
+  if (logo.complete) {
+    declencher();
+  } else {
+    logo.addEventListener('load', declencher, { once: true });
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  animerLogoIntro('.nav-logo', 6);
+  animerLogoIntro('.hero-logo', 10);
+});

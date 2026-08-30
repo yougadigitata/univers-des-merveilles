@@ -138,6 +138,56 @@ nav {
   box-shadow: 0 4px 20px rgba(212, 168, 87, 0.7);
 }
 
+/* ============================================================
+   ANIMATION D'OUVERTURE DU LOGO (rotation 160° + jaillissement d'étoiles)
+   ============================================================ */
+.logo-intro-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+@keyframes logoIntroSpin {
+  0%   { transform: rotate(0deg) scale(1); }
+  35%  { transform: rotate(120deg) scale(1.08); }
+  65%  { transform: rotate(160deg) scale(1.12); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.logo-intro-spin {
+  animation: logoIntroSpin 1.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.hero-logo.logo-intro-spin {
+  animation:
+    logoIntroSpin 1.5s cubic-bezier(0.34, 1.2, 0.64, 1),
+    heroLogoPulse 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes logoStarBurst {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+  }
+  100% {
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.1) rotate(200deg);
+    opacity: 0;
+  }
+}
+
+.logo-star {
+  position: fixed;
+  font-size: 1.15rem;
+  line-height: 1;
+  pointer-events: none;
+  animation: logoStarBurst 0.95s ease-out forwards;
+  z-index: 9999;
+  filter: drop-shadow(0 0 4px rgba(212, 168, 87, 0.8));
+}
+
 .nav-brand-text {
   display: flex;
   flex-direction: column;
@@ -223,12 +273,12 @@ nav {
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* ============================================================
-   HERO SECTION (Accueil) — Fond image gobelet en filigrane
+   HERO SECTION (Accueil) — Fond image produit en filigrane
    ============================================================ */
 .hero {
   background:
     linear-gradient(160deg, rgba(28, 16, 6, 0.88) 0%, rgba(50, 30, 12, 0.82) 40%, rgba(30, 20, 8, 0.90) 100%),
-    url('../images/produits/gobelet-lily-of-the-valley.jpg') center/cover no-repeat;
+    url('../images/produits/lunettes-uv-oversize.jpg') center/cover no-repeat;
   padding: 6rem 1.5rem 4rem;
   text-align: center;
   position: relative;
@@ -269,6 +319,8 @@ nav {
 
 .hero-logo-container {
   margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
 }
 
 /* Logo héro circulaire avec animation pulsation */
@@ -732,7 +784,7 @@ nav {
 .page-hero {
   background:
     linear-gradient(135deg, rgba(28,16,6,0.92) 0%, rgba(50,30,12,0.88) 100%),
-    url('../images/produits/gobelet-lily-of-the-valley.jpg') center/cover no-repeat;
+    url('../images/produits/lunettes-uv-oversize.jpg') center/cover no-repeat;
   padding: 4rem 1.5rem;
   text-align: center;
   position: relative;

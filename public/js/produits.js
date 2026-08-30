@@ -1,8 +1,9 @@
 /**
- * L'Univers des Merveilles - Données des produits (v2)
+ * L'Univers des Merveilles - Données des produits (v3)
  * Pour ajouter un produit : insérez un nouvel objet dans le tableau ci-dessous.
  * L'image doit être placée dans /images/produits/ et nommée selon la clé "image".
- * Les prix seront communiqués ultérieurement – utiliser "Prix à venir" en attendant.
+ * Prix exprimés en Francs CFA (FCFA). Laisser prixUnitaire à null si le prix
+ * n'est pas encore communiqué (affichage automatique "Prix à venir").
  */
 
 const produits = [
@@ -10,7 +11,8 @@ const produits = [
     id: 1,
     nom: "Lunettes UV Oversize",
     categorie: "Protection",
-    // prix: null, — prix à confirmer
+    prixUnitaire: 3500,
+    prixPack: 6000,
     description: "Monture oversize, branches dorées, protection UV 100% – élégance et confort.",
     descriptionComplete: `Ces lunettes de soleil oversize allient style et protection. 
     Leurs branches dorées apportent une touche de luxe intemporelle, tandis que leurs verres offrent 
@@ -22,62 +24,54 @@ const produits = [
     badgeColor: "#b8892f"
   },
   {
-    id: 2,
-    nom: "Gobelet Lily Of The Valley",
-    categorie: "Maison & Cuisine",
-    // prix: null, — prix à confirmer
-    description: "Gobelet transparent avec motif muguet, couvercle étanche et lanière de transport rose.",
-    descriptionComplete: `Ce gobelet transparent d'exception est orné d'un délicat motif muguet gravé 
-    qui lui confère une élégance florale unique. Son couvercle étanche rose pastel avec système 
-    de fermeture sécurisé empêche tout déversement accidentel. La lanière de transport en tissu rose 
-    facilite son transport au quotidien. Idéal pour votre eau, jus ou smoothie, ce gobelet 
-    transforme chaque gorgée en un moment de douceur.`,
-    image: "gobelet-lily-of-the-valley.webp",
-    badge: "Nouveau",
-    badgeColor: "#a67c5b"
-  },
-  {
     id: 3,
-    nom: "Lunch Box Électrique Rose",
+    nom: "Lunch Box Électrique – Modèle Couleurs",
     categorie: "Maison & Cuisine",
-    // prix: null, — prix à confirmer
-    description: "Chauffe-repas 3 contenants inox, hermétique, chauffage rapide – idéal pour le bureau.",
-    descriptionComplete: `La lunch box électrique rose révolutionne vos repas au bureau ou en déplacement. 
-    Avec ses 3 contenants en acier inoxydable de qualité alimentaire, vous pouvez transporter 
-    différents plats sans mélange de saveurs. Le système de chauffage rapide et économique vous 
-    garantit un repas chaud en quelques minutes. Son design hermétique et sécurisé prévient 
-    toute fuite. Légère et facile à transporter, elle est votre alliée pour une alimentation 
-    saine et chaude partout.`,
+    prixUnitaire: 11000,
+    prixPack: null,
+    description: "Chauffe-repas électrique 3 contenants inox, hermétique – disponible en noir, rose ou rouge.",
+    descriptionComplete: `Cette lunch box électrique révolutionne vos repas au bureau ou en déplacement. 
+    Disponible en trois coloris au choix – noir, rose ou rouge – elle est équipée de 3 contenants en acier 
+    inoxydable de qualité alimentaire, pour transporter différents plats sans mélange de saveurs. 
+    Le système de chauffage rapide et économique vous garantit un repas chaud en quelques minutes. 
+    Son design hermétique et sécurisé prévient toute fuite. Légère et facile à transporter, elle est 
+    votre alliée pour une alimentation saine et chaude partout. Précisez votre coloris préféré lors 
+    de votre commande sur WhatsApp.`,
     image: "lunch-box-electrique.webp",
     badge: "Pratique",
     badgeColor: "#4a7c59"
   },
   {
     id: 4,
-    nom: "Lunch Box Électrique Noire",
+    nom: "Lunch Box Électrique – Modèle Grille",
     categorie: "Maison & Cuisine",
-    // prix: null, — prix à confirmer
-    description: "Chauffe-repas inox noir premium, 3 contenants, bouton lumineux – design élégant.",
-    descriptionComplete: `Cette lunch box électrique noire premium est parfaite pour ceux qui allient 
-    fonctionnalité et élégance. Dotée de 3 grands contenants en acier inoxydable alimentaire, 
-    elle garde vos plats au chaud en toutes circonstances. Son bouton lumineux orange indique 
-    le statut de chauffe. Son design sobre et masculin la rend idéale aussi bien pour les femmes 
-    que pour les hommes actifs. Un vrai repas chaud, partout, à tout moment.`,
-    image: "lunch-box-electrique-noire.webp",
-    badge: "Premium",
+    prixUnitaire: 12000,
+    prixPack: null,
+    nouveaute: true,
+    description: "Chauffe-repas électrique premium avec plusieurs plats compartimentés – capacité XXL.",
+    descriptionComplete: `Cette lunch box électrique modèle « Grille » premium est parfaite pour ceux qui veulent 
+    transporter plusieurs plats variés en une seule fois : riz et légumes, viande ou poulet, soupe ou sauce. 
+    Ses grands contenants en acier inoxydable alimentaire empilables gardent chaque plat au chaud séparément, 
+    sans mélange de saveurs. Design tout en rose et blanc, élégant et facile à nettoyer. 
+    Idéale pour la famille, le bureau ou les grands appétits. Un vrai repas complet et chaud, partout, 
+    à tout moment.`,
+    image: "lunch-box-electrique-grille.webp",
+    badge: "Nouveau",
     badgeColor: "#3d2e1e"
   },
   {
     id: 5,
     nom: "Balai Serpillière Rotatif",
     categorie: "Maison & Cuisine",
-    // prix: null, — prix à confirmer
-    description: "Set balai spin mop avec seau essoreur – nettoyage efficace sans se baisser.",
-    descriptionComplete: `Ce balai serpillière rotatif avec seau essoreur intégré révolutionne le nettoyage 
-    de vos sols. Son système d'essorage centrifuge permet de régler le niveau d'humidité selon vos besoins. 
-    La tête rotative à 360° atteint facilement les coins et sous les meubles. Sa mèche en microfibre orange 
-    absorbe efficacement saletés et liquides. Le seau en plastique résistant avec roulettes facilite son 
-    déplacement. Un incontournable pour des sols impeccables sans effort.`,
+    prixUnitaire: 5900,
+    prixPack: 10000,
+    description: "Balai microfibre rotatif à 360°, manche télescopique – nettoyage efficace sans se baisser.",
+    descriptionComplete: `Ce balai serpillière rotatif révolutionne le nettoyage de vos sols. 
+    Sa tête ronde en microfibre orange, rotative à 360°, atteint facilement les coins et sous les meubles. 
+    Le manche métallique télescopique avec poignée orange ergonomique s'ajuste à votre taille pour un 
+    nettoyage sans effort et sans se baisser. Sa mèche en microfibre absorbe efficacement saletés et 
+    liquides sur tous types de sols (carrelage, parquet, sols brillants). Un incontournable pour des 
+    sols impeccables sans effort.`,
     image: "balai-spin-mop.webp",
     badge: "Efficace",
     badgeColor: "#b8892f"
@@ -86,7 +80,8 @@ const produits = [
     id: 6,
     nom: "Balai Microfibre Plat",
     categorie: "Maison & Cuisine",
-    // prix: null, — prix à confirmer
+    prixUnitaire: 5000,
+    prixPack: null,
     description: "Balai microfibre plat auto-essorant, 2 tampons inclus – idéal pour sols polis.",
     descriptionComplete: `Ce balai microfibre plat innovant est équipé d'un système auto-essorant sans seau 
     qui facilite grandement le nettoyage quotidien. Ses 2 tampons en microfibre grise inclus sont lavables 
@@ -101,7 +96,8 @@ const produits = [
     id: 7,
     nom: "Coffret à Bijoux Vert",
     categorie: "Mode & Luxe",
-    // prix: null, — prix à confirmer
+    prixUnitaire: 6000,
+    prixPack: null,
     description: "Écrin en similicuir vert, velours intérieur, compartiments pour bagues, colliers, montres.",
     descriptionComplete: `Ce magnifique coffret à bijoux en similicuir vert forêt est un véritable 
     trésor d'organisation. Son intérieur en velours crème protège vos bijoux les plus précieux 
@@ -117,7 +113,8 @@ const produits = [
     id: 8,
     nom: "Sac de Plage Tropical",
     categorie: "Mode & Luxe",
-    // prix: null, — prix à confirmer
+    prixUnitaire: 5000,
+    prixPack: null,
     description: "Grand fourre-tout imprimé plage, base en jute, anses en corde – chic et pratique.",
     descriptionComplete: `Ce grand sac fourre-tout tropical est l'accessoire parfait pour la plage, 
     le marché ou une journée en ville. Son imprimé paradisiaque représentant une plage tropicale 
@@ -133,8 +130,8 @@ const produits = [
     id: 9,
     nom: "Lunettes Aviateur Or & Noir",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Solaires aviateur oversize, verres noirs, monture dorée sans cadre – allure premium.",
     descriptionComplete: `Ces lunettes de soleil aviateur oversize incarnent le luxe à l'état pur. 
@@ -150,8 +147,8 @@ const produits = [
     id: 10,
     nom: "Lunettes Carrées Dégradé & Strass",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Solaires carrées oversize, verres dégradé ambre, monture dorée ornée de strass.",
     descriptionComplete: `Véritables bijoux pour le regard, ces lunettes carrées oversize séduisent par 
@@ -167,8 +164,8 @@ const produits = [
     id: 11,
     nom: "Lunettes Carrées Noires Verres Ambre",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Solaires carrées en acétate noir épais, verres ambre chaleureux – style rétro-chic.",
     descriptionComplete: `Ces lunettes de soleil carrées en acétate noir brillant affichent un caractère 
@@ -184,8 +181,8 @@ const produits = [
     id: 12,
     nom: "Lunettes Rondes Perle Noires",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Monture ronde oversize noire, branches dorées ondulées ornées d'une perle nacrée.",
     descriptionComplete: `Cette monture optique ronde oversize en acétate noir profond est une véritable 
@@ -201,8 +198,8 @@ const produits = [
     id: 13,
     nom: "Lunettes Écaille Oversize",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Monture carrée oversize motif écaille de tortue, verres clairs anti-lumière bleue.",
     descriptionComplete: `Cette monture carrée oversize au motif écaille de tortue est l'alliée parfaite 
@@ -218,8 +215,8 @@ const produits = [
     id: 14,
     nom: "Lunettes Papillon Écaille",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Monture œil-de-chat écaille de tortue, médaillon doré – féminité et raffinement.",
     descriptionComplete: `Cette monture papillon (œil-de-chat) au motif écaille de tortue incarne 
@@ -235,8 +232,8 @@ const produits = [
     id: 15,
     nom: "Lunettes Hexagonales Noires",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Monture hexagonale oversize noire, détail « V » doré – design audacieux et graphique.",
     descriptionComplete: `Osez la géométrie avec cette monture hexagonale oversize en acétate noir 
@@ -252,7 +249,7 @@ const produits = [
     id: 16,
     nom: "Gourde Kawaii Violette",
     categorie: "Maison & Cuisine",
-    prixUnitaire: null,
+    prixUnitaire: 5000,
     prixPack: null,
     nouveaute: true,
     description: "Gourde thermos violette style kawaii avec figurine lapin sous dôme, bandoulière incluse.",
@@ -269,7 +266,7 @@ const produits = [
     id: 17,
     nom: "Boîte à Bijoux Pivotante Verte",
     categorie: "Mode & Luxe",
-    prixUnitaire: null,
+    prixUnitaire: 3000,
     prixPack: null,
     nouveaute: true,
     description: "Boîte à bijoux rotative 4 niveaux vert menthe, miroir intégré – rangement élégant et compact.",
@@ -303,8 +300,8 @@ const produits = [
     id: 19,
     nom: "Lunettes Carrées Ambre & Noir",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Solaires oversize monture noire épaisse, verres ambre chaleureux, barre nasale dorée – style rétro premium.",
     descriptionComplete: `Ces lunettes de soleil carrées oversize en acétate noir brillant épais incarnent le glamour rétro à son summum. 
@@ -320,8 +317,8 @@ const produits = [
     id: 20,
     nom: "Lunettes Rondes Noires Élégance",
     categorie: "Protection",
-    prixUnitaire: null,
-    prixPack: null,
+    prixUnitaire: 3500,
+    prixPack: 6000,
     nouveaute: true,
     description: "Solaires rondes oversize noires, monture épaisse, branches décorées strass dorés – élégance & intemporel.",
     descriptionComplete: `Ces lunettes de soleil rondes oversize en acétate noir profond sont la définition même de l'élégance intemporelle. 
@@ -334,6 +331,49 @@ const produits = [
     badgeColor: "#1a1a1a"
   }
 ];
+
+/**
+ * Formate un prix en Francs CFA (ex: 5000 → "5 000 FCFA")
+ */
+const formatPrixFCFA = (n) => {
+  return `${n.toLocaleString('fr-FR')} FCFA`;
+};
+
+/**
+ * Génère le bloc HTML de prix pour une carte produit (catalogue / accueil)
+ */
+const getPrixCardHTML = (p) => {
+  if (p.prixUnitaire) {
+    let html = `<div class="produit-prix-section">
+      <span class="produit-prix">${formatPrixFCFA(p.prixUnitaire)}</span>`;
+    if (p.prixPack) {
+      html += `<span class="produit-prix-pack"><i class="fas fa-gift" style="margin-right:0.2rem;"></i>Pack 2 : ${formatPrixFCFA(p.prixPack)}</span>`;
+    }
+    html += `</div>`;
+    return html;
+  }
+  return `<div class="produit-prix-section">
+    <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
+  </div>`;
+};
+
+/**
+ * Génère le bloc HTML de prix pour la page détail produit
+ */
+const getPrixDetailHTML = (p) => {
+  if (p.prixUnitaire) {
+    let html = `<div class="produit-detail-prix">
+      <span class="prix-principal">${formatPrixFCFA(p.prixUnitaire)}</span>`;
+    if (p.prixPack) {
+      html += `<span class="prix-pack-label"><i class="fas fa-star" style="margin-right:0.3rem;color:var(--champagne-fonce);"></i>Offre spéciale : le pack de 2 à ${formatPrixFCFA(p.prixPack)}</span>`;
+    }
+    html += `</div>`;
+    return html;
+  }
+  return `<div class="produit-detail-prix">
+    <span class="prix-principal"><i class="fas fa-clock" style="margin-right:0.4rem;"></i>Prix à venir</span>
+  </div>`;
+};
 
 /**
  * Récupère les nouveautés (derniers arrivages)
@@ -374,11 +414,14 @@ const getProduitsSimilaires = (produitId, categorie, limit = 3) => {
 };
 
 /**
- * Génère un message WhatsApp pré-rempli (sans prix)
+ * Génère un message WhatsApp pré-rempli (avec prix si disponible)
  */
 const getWhatsAppLink = (produit) => {
+  const infoPrix = produit.prixUnitaire
+    ? ` — Prix : ${formatPrixFCFA(produit.prixUnitaire)}${produit.prixPack ? ` (pack de 2 : ${formatPrixFCFA(produit.prixPack)})` : ''}`
+    : '';
   const message = encodeURIComponent(
-    `Bonjour 👋, je suis intéressé(e) par le produit : *${produit.nom}* (Réf. #${produit.id}). Pouvez-vous me donner plus d'informations sur le prix et la disponibilité ? Merci !`
+    `Bonjour 👋, je suis intéressé(e) par le produit : *${produit.nom}*${infoPrix} (Réf. #${produit.id}). Est-il disponible ? Merci !`
   );
   return `https://wa.me/22677367727?text=${message}`;
 };

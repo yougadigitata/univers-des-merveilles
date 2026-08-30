@@ -56,7 +56,7 @@
 </header>
 
 <!-- ============================================================
-     SECTION HÉRO — fond : image gobelet en filigrane
+     SECTION HÉRO — fond : image produit en filigrane
      ============================================================ -->
 <section class="hero">
   <div class="hero-content">
@@ -113,7 +113,7 @@
       <a href="produits.html?categorie=Maison+%26+Cuisine" class="categorie-card reveal">
         <div class="categorie-icon">🏠</div>
         <h3>Maison & Cuisine</h3>
-        <p>Gobelets, lunch box, balais, électroménager</p>
+        <p>Lunch box, balais, gourdes, électroménager</p>
       </a>
       <a href="produits.html?categorie=Mode+%26+Luxe" class="categorie-card reveal">
         <div class="categorie-icon">👜</div>
@@ -162,6 +162,16 @@
       <a href="produits.html" class="btn btn-accent">
         <i class="fas fa-arrow-right"></i> Voir tous nos produits
       </a>
+    </div>
+
+    <!-- Note variantes / couleurs -->
+    <div class="reveal" style="text-align:center;margin-top:2.5rem;padding:1.25rem 1.5rem;background:var(--beige);border-radius:14px;border:1px solid var(--champagne);max-width:720px;margin-left:auto;margin-right:auto;">
+      <p style="font-size:0.9rem;color:var(--texte-clair);margin:0;">
+        <i class="fas fa-palette" style="color:var(--champagne-fonce);margin-right:0.4rem;"></i>
+        Nos produits sont disponibles en plusieurs couleurs et variantes. Si vous ne trouvez pas votre bonheur,
+        <a href="contact.html" style="color:var(--accent);font-weight:600;">contactez-nous</a> !
+        Nous avons bien d'autres merveilles à vous proposer.
+      </p>
     </div>
   </div>
 </section>
@@ -304,6 +314,10 @@
         <i class="fab fa-whatsapp"></i>
         <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
       </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-clock"></i>
+        <span>Ouvert 7j/7 de 8h à 19h</span>
+      </div>
     </div>
   </div>
 
@@ -344,9 +358,7 @@
             <span class="produit-categorie">${p.categorie}</span>
             <h3 class="produit-nom">${p.nom}</h3>
             <p class="produit-desc">${p.description}</p>
-            <div class="produit-prix-section">
-              <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
-            </div>
+            ${getPrixCardHTML(p)}
           </div>
         </article>
     `;
@@ -390,9 +402,7 @@
             <span class="produit-categorie">${p.categorie}</span>
             <h3 class="produit-nom">${p.nom}</h3>
             <p class="produit-desc">${p.description}</p>
-            <div class="produit-prix-section">
-              <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
-            </div>
+            ${getPrixCardHTML(p)}
           </div>
         </article>
       `;

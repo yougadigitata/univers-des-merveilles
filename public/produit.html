@@ -119,6 +119,10 @@
         <i class="fab fa-whatsapp"></i>
         <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
       </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-clock"></i>
+        <span>Ouvert 7j/7 de 8h à 19h</span>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -175,18 +179,14 @@
             <i class="fas fa-tag"></i> ${p.categorie}
           </p>
           <h1 class="produit-detail-nom">${p.nom}</h1>
-          
-          <!-- Prix à venir -->
-          <div class="produit-detail-prix">
-            <span class="prix-principal">
-              <i class="fas fa-clock" style="margin-right:0.4rem;"></i>Prix à venir
-            </span>
-          </div>
 
+          ${getPrixDetailHTML(p)}
+
+          ${p.prixUnitaire ? '' : `
           <p style="font-size:0.85rem;color:var(--texte-clair);margin-bottom:1.5rem;font-style:italic;">
             <i class="fas fa-info-circle" style="color:var(--champagne-fonce);margin-right:0.3rem;"></i>
             Le prix sera communiqué prochainement. Contactez-nous sur WhatsApp pour plus d'informations.
-          </p>
+          </p>`}
 
           <p class="produit-detail-desc">${p.descriptionComplete}</p>
 
@@ -234,9 +234,7 @@
                 <span class="produit-categorie">${sim.categorie}</span>
                 <h3 class="produit-nom">${sim.nom}</h3>
                 <p class="produit-desc">${sim.description}</p>
-                <div class="produit-prix-section">
-                  <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
-                </div>
+                ${getPrixCardHTML(sim)}
               </div>
             </article>
           `;

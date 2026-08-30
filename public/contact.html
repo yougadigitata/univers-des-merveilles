@@ -174,7 +174,7 @@
           </div>
           <p>
             <a href="tel:+22677367727" style="font-weight:600;color:var(--accent);font-size:1rem;">+226 77 36 77 27</a><br/>
-            <span style="font-size:0.82rem;color:#999;">Appels & WhatsApp · Lun–Sam 8h–20h · Dimanche WhatsApp uniquement</span>
+            <span style="font-size:0.82rem;color:#999;">Appels & WhatsApp · Ouvert 7j/7 de 8h à 19h</span>
           </p>
         </div>
 
@@ -186,66 +186,68 @@
             <div><h3>Horaires</h3></div>
           </div>
           <p>
-            <strong>Lundi – Vendredi :</strong> 8h00 – 20h00<br/>
-            <strong>Samedi :</strong> 9h00 – 18h00<br/>
-            <strong>Dimanche :</strong> WhatsApp uniquement
+            <strong>Tous les jours (7j/7) :</strong> 8h00 – 19h00<br/>
+            <span style="font-size:0.82rem;">WhatsApp disponible en dehors de ces horaires.</span>
           </p>
         </div>
       </aside>
 
-      <!-- Formulaire de contact -->
+      <!-- Formulaire de réservation / contact → envoyé directement sur WhatsApp -->
       <div class="form-card reveal-right">
-        <h2>📩 Envoyez-nous un message</h2>
-        <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les meilleurs délais.</p>
+        <h2>📩 Réservez ou demandez des infos</h2>
+        <p>Remplissez le formulaire ci-dessous : votre message sera préparé et envoyé directement sur notre WhatsApp pour une réponse rapide.</p>
 
         <form id="contact-form" novalidate>
           <div class="form-grid">
             <div class="form-group">
+              <label class="form-label" for="prenom">
+                <i class="fas fa-user" style="color:var(--accent);margin-right:0.4rem;"></i>Prénom *
+              </label>
+              <input type="text" id="prenom" name="prenom" class="form-control" placeholder="Votre prénom..." required />
+              <span class="form-error" id="prenom-error">Le prénom est requis.</span>
+            </div>
+            <div class="form-group">
               <label class="form-label" for="nom">
-                <i class="fas fa-user" style="color:var(--accent);margin-right:0.4rem;"></i>Nom complet *
+                <i class="fas fa-user" style="color:var(--accent);margin-right:0.4rem;"></i>Nom *
               </label>
               <input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom..." required />
               <span class="form-error" id="nom-error">Le nom est requis.</span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="email">
-                <i class="fas fa-envelope" style="color:var(--accent);margin-right:0.4rem;"></i>Email *
-              </label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="votre@email.com" required />
-              <span class="form-error" id="email-error">Email valide requis.</span>
             </div>
           </div>
 
           <div class="form-grid">
             <div class="form-group">
               <label class="form-label" for="telephone">
-                <i class="fas fa-phone" style="color:var(--accent);margin-right:0.4rem;"></i>Téléphone
+                <i class="fas fa-phone" style="color:var(--accent);margin-right:0.4rem;"></i>Téléphone *
               </label>
-              <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="+226 XX XX XX XX" />
+              <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="+226 XX XX XX XX" required />
+              <span class="form-error" id="telephone-error">Le téléphone est requis.</span>
             </div>
             <div class="form-group">
-              <label class="form-label" for="sujet">
-                <i class="fas fa-tag" style="color:var(--accent);margin-right:0.4rem;"></i>Sujet *
+              <label class="form-label" for="quantite">
+                <i class="fas fa-sort-numeric-up" style="color:var(--accent);margin-right:0.4rem;"></i>Quantité
               </label>
-              <select id="sujet" name="sujet" class="form-control" required>
-                <option value="">-- Choisir un sujet --</option>
-                <option value="commande">Passer une commande</option>
-                <option value="info">Demande d'informations</option>
-                <option value="livraison">Question sur la livraison</option>
-                <option value="retour">Retour / Réclamation</option>
-                <option value="partenariat">Partenariat</option>
-                <option value="autre">Autre</option>
-              </select>
-              <span class="form-error" id="sujet-error">Veuillez choisir un sujet.</span>
+              <input type="number" id="quantite" name="quantite" class="form-control" placeholder="1" min="1" value="1" />
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="message">
-              <i class="fas fa-comment" style="color:var(--accent);margin-right:0.4rem;"></i>Message *
+            <label class="form-label" for="produit">
+              <i class="fas fa-shopping-bag" style="color:var(--accent);margin-right:0.4rem;"></i>Produit(s) souhaité(s) *
             </label>
-            <textarea id="message" name="message" class="form-control" placeholder="Décrivez votre demande en détail..." required></textarea>
-            <span class="form-error" id="message-error">Le message est requis.</span>
+            <select id="produit" name="produit" class="form-control" required>
+              <option value="">-- Choisir un produit --</option>
+              <!-- Options générées automatiquement depuis le catalogue -->
+              <option value="autre">Autre / plusieurs produits (précisez dans le message)</option>
+            </select>
+            <span class="form-error" id="produit-error">Veuillez choisir un produit.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">
+              <i class="fas fa-comment" style="color:var(--accent);margin-right:0.4rem;"></i>Message (optionnel)
+            </label>
+            <textarea id="message" name="message" class="form-control" placeholder="Précisez la couleur, la livraison, ou toute autre demande..."></textarea>
           </div>
 
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
@@ -255,19 +257,19 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
-            <i class="fas fa-paper-plane"></i> Envoyer le message
+          <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;padding:1rem;">
+            <i class="fab fa-whatsapp"></i> Envoyer via WhatsApp
           </button>
         </form>
 
         <!-- Message de succès -->
         <div id="success-msg" style="display:none;margin-top:1.5rem;padding:1.25rem 1.5rem;background:rgba(39,174,96,0.1);border:1px solid #27ae60;border-radius:12px;color:#27ae60;text-align:center;">
           <i class="fas fa-check-circle" style="font-size:2rem;margin-bottom:0.5rem;display:block;"></i>
-          <strong>Message envoyé !</strong><br/>
-          <span style="font-size:0.9rem;">Nous vous répondrons très bientôt. En attendant, vous pouvez nous contacter via WhatsApp pour une réponse immédiate.</span>
+          <strong>Redirection vers WhatsApp...</strong><br/>
+          <span style="font-size:0.9rem;">Si la fenêtre ne s'est pas ouverte automatiquement, cliquez ci-dessous.</span>
           <div style="margin-top:1rem;">
-            <a href="https://wa.me/22677367727" target="_blank" class="btn btn-whatsapp btn-sm">
-              <i class="fab fa-whatsapp"></i> WhatsApp maintenant
+            <a href="https://wa.me/22677367727" target="_blank" id="success-wa-link" class="btn btn-whatsapp btn-sm">
+              <i class="fab fa-whatsapp"></i> Ouvrir WhatsApp
             </a>
           </div>
         </div>
@@ -348,6 +350,10 @@
         <i class="fab fa-whatsapp"></i>
         <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
       </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-clock"></i>
+        <span>Ouvert 7j/7 de 8h à 19h</span>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -361,9 +367,27 @@
   <span>Commander</span>
 </a>
 
+<script src="js/produits.js"></script>
 <script src="js/app.js"></script>
 <script>
-  /* Validation du formulaire de contact */
+  /* Numéro WhatsApp de la boutique (sans le +) */
+  const WHATSAPP_BOUTIQUE = '22677367727';
+
+  /* Remplir dynamiquement la liste des produits depuis le catalogue */
+  const selectProduit = document.getElementById('produit');
+  if (selectProduit && typeof produits !== 'undefined') {
+    const optionAutre = selectProduit.querySelector('option[value="autre"]');
+    produits.forEach(p => {
+      const opt = document.createElement('option');
+      opt.value = p.nom;
+      opt.textContent = p.prixUnitaire
+        ? `${p.nom} — ${formatPrixFCFA(p.prixUnitaire)}`
+        : `${p.nom} — Prix à venir`;
+      selectProduit.insertBefore(opt, optionAutre);
+    });
+  }
+
+  /* Validation + envoi du formulaire vers WhatsApp */
   const contactForm = document.getElementById('contact-form');
   const successMsg = document.getElementById('success-msg');
 
@@ -371,49 +395,76 @@
     const isValid = validator(input.value.trim());
     input.classList.toggle('is-invalid', !isValid);
     input.classList.toggle('is-valid', isValid);
-    document.getElementById(errorId).style.display = isValid ? 'none' : 'block';
+    const errorEl = document.getElementById(errorId);
+    if (errorEl) errorEl.style.display = isValid ? 'none' : 'block';
     return isValid;
+  }
+
+  function buildWhatsAppUrl({ prenom, nom, telephone, produit, quantite, message }) {
+    let texte = `Bonjour 👋, je souhaite faire une réservation :\n`;
+    texte += `• Nom : ${prenom} ${nom}\n`;
+    texte += `• Téléphone : ${telephone}\n`;
+    texte += `• Produit : ${produit}\n`;
+    texte += `• Quantité : ${quantite}\n`;
+    if (message) texte += `• Message : ${message}\n`;
+    return `https://wa.me/${WHATSAPP_BOUTIQUE}?text=${encodeURIComponent(texte)}`;
   }
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      const prenom = document.getElementById('prenom');
       const nom = document.getElementById('nom');
-      const email = document.getElementById('email');
-      const sujet = document.getElementById('sujet');
+      const telephone = document.getElementById('telephone');
+      const produit = document.getElementById('produit');
+      const quantite = document.getElementById('quantite');
       const message = document.getElementById('message');
       const consent = document.getElementById('consent');
 
+      const validPrenom = validateField(prenom, 'prenom-error', v => v.length >= 2);
       const validNom = validateField(nom, 'nom-error', v => v.length >= 2);
-      const validEmail = validateField(email, 'email-error', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-      const validSujet = validateField(sujet, 'sujet-error', v => v !== '');
-      const validMessage = validateField(message, 'message-error', v => v.length >= 10);
+      const validTelephone = validateField(telephone, 'telephone-error', v => v.length >= 8);
+      const validProduit = validateField(produit, 'produit-error', v => v !== '');
 
       if (!consent.checked) {
-        showToast('Veuillez accepter les conditions pour envoyer le message.', 'error');
+        showToast('Veuillez accepter les conditions pour envoyer votre demande.', 'error');
         return;
       }
 
-      if (validNom && validEmail && validSujet && validMessage) {
+      if (validPrenom && validNom && validTelephone && validProduit) {
+        const url = buildWhatsAppUrl({
+          prenom: prenom.value.trim(),
+          nom: nom.value.trim(),
+          telephone: telephone.value.trim(),
+          produit: produit.value,
+          quantite: quantite.value.trim() || '1',
+          message: message.value.trim()
+        });
+
+        document.getElementById('success-wa-link').href = url;
         contactForm.style.display = 'none';
         successMsg.style.display = 'block';
-        showToast('Message envoyé avec succès ! ✅', 'success');
+        showToast('Redirection vers WhatsApp... ✅', 'success');
+
+        window.open(url, '_blank');
+      } else {
+        showToast('Merci de compléter les champs obligatoires (*).', 'error');
       }
     });
 
     // Validation en temps réel
+    document.getElementById('prenom').addEventListener('blur', function() {
+      validateField(this, 'prenom-error', v => v.length >= 2);
+    });
     document.getElementById('nom').addEventListener('blur', function() {
       validateField(this, 'nom-error', v => v.length >= 2);
     });
-    document.getElementById('email').addEventListener('blur', function() {
-      validateField(this, 'email-error', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    document.getElementById('telephone').addEventListener('blur', function() {
+      validateField(this, 'telephone-error', v => v.length >= 8);
     });
-    document.getElementById('sujet').addEventListener('change', function() {
-      validateField(this, 'sujet-error', v => v !== '');
-    });
-    document.getElementById('message').addEventListener('blur', function() {
-      validateField(this, 'message-error', v => v.length >= 10);
+    document.getElementById('produit').addEventListener('change', function() {
+      validateField(this, 'produit-error', v => v !== '');
     });
   }
 </script>

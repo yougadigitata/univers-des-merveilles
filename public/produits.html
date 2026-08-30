@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produits – L'Univers des Merveilles</title>
-  <meta name="description" content="Découvrez notre catalogue complet : lunettes UV, coffrets à bijoux, gobelets, lunch box, balais et bien plus." />
+  <meta name="description" content="Découvrez notre catalogue complet : lunettes UV, coffrets à bijoux, lunch box électriques, balais et bien plus." />
   <link rel="icon" type="image/webp" href="images/logo/logo-univers-merveilles.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -71,12 +71,22 @@
 
     <!-- Compteur -->
     <p id="compteur" style="text-align:center; color:var(--texte-clair); margin-bottom:1.5rem; font-size:0.9rem;">
-      Affichage de <strong id="nb-produits">15</strong> produits
+      Affichage de <strong id="nb-produits">19</strong> produits
     </p>
 
     <!-- Grille -->
     <div class="produits-grid" id="produits-grid">
       <!-- Générés par JS -->
+    </div>
+
+    <!-- Note variantes / couleurs -->
+    <div class="reveal" style="text-align:center;margin-top:2.5rem;padding:1.25rem 1.5rem;background:var(--beige);border-radius:14px;border:1px solid var(--champagne);max-width:720px;margin-left:auto;margin-right:auto;">
+      <p style="font-size:0.9rem;color:var(--texte-clair);margin:0;">
+        <i class="fas fa-palette" style="color:var(--champagne-fonce);margin-right:0.4rem;"></i>
+        Nos produits sont disponibles en plusieurs couleurs et variantes. Si vous ne trouvez pas votre bonheur,
+        <a href="contact.html" style="color:var(--accent);font-weight:600;">contactez-nous</a> !
+        Nous avons bien d'autres merveilles à vous proposer.
+      </p>
     </div>
   </div>
 </section>
@@ -139,6 +149,10 @@
         <i class="fab fa-whatsapp"></i>
         <a href="https://wa.me/22677367727">+226 77 36 77 27</a>
       </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-clock"></i>
+        <span>Ouvert 7j/7 de 8h à 19h</span>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -195,9 +209,7 @@
           <span class="produit-categorie">${p.categorie}</span>
           <h3 class="produit-nom">${p.nom}</h3>
           <p class="produit-desc">${p.description}</p>
-          <div class="produit-prix-section">
-            <span class="badge-prix-venir"><i class="fas fa-tag" style="margin-right:0.3rem;"></i>Prix à venir</span>
-          </div>
+          ${getPrixCardHTML(p)}
         </div>
       `;
       grid.appendChild(card);
