@@ -1,5 +1,19 @@
 # L'Univers des Merveilles
 
+## 🆕 Mise à jour cumulée (30 août 2026)
+- **Animation logo à l'ouverture** : rotation 160° (~1,5s) + jaillissement d'étoiles ⭐✨🌟 sur le logo du menu (toutes pages) et le logo héro (accueil) — voir `.logo-intro-spin` / `faireJaillirEtoiles()` dans `app.js`.
+- **Formulaire de réservation → WhatsApp** (`contact.html`) : Prénom, Nom, Téléphone, Produit (liste dynamique du catalogue), Quantité, Message → génère et ouvre un lien `wa.me/22677367727` pré-rempli.
+- **Prix réels ajoutés** (FCFA) pour : Lunettes UV et toutes les lunettes Protection (3 500 / pack 2 : 6 000), Lunch Box Couleurs (11 000), Lunch Box Grille (12 000, nouveau produit), Balai Rotatif (5 900 / pack 2 : 10 000), Coffret à Bijoux Vert (6 000), Balai Microfibre Plat (5 000), Gourde Kawaii (5 000), Boîte à Bijoux Pivotante (3 000), Sac de Plage Tropical (5 000). Affichage automatique via `getPrixCardHTML()` / `getPrixDetailHTML()`.
+- **Suppression du Gobelet Lily Of The Valley** (produit + images) ; l'image de fond hero/page-hero utilise désormais `lunettes-uv-oversize.jpg`.
+- **Nouveau produit : Lunch Box Électrique – Modèle Grille** (id 4, image fournie par le chef, plusieurs plats compartimentés).
+- **Nouvelle image du Balai Serpillière Rotatif** (remplace l'ancienne photo montrant des pièces de monnaie).
+- **Horaires 7j/7 – 8h à 19h** ajoutés dans le footer de toutes les pages et sur la page Contact.
+- **Mention variantes/couleurs disponibles** ajoutée sur l'accueil et le catalogue.
+- Vérification : aucun doublon produit, page À propos déjà sans « depuis 2024 » avec adresse temporaire.
+- Catalogue : **19 produits** (était 20, -1 gobelet +1 lunch box grille déjà comptée dans l'ancien total... voir `produits.js`).
+
+---
+
 ## 📌 Présentation
 
 Boutique en ligne spécialisée dans la vente de produits et d'accessoires de beauté modernes,
