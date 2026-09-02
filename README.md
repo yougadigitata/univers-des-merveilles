@@ -191,3 +191,9 @@ node optimize-images.mjs
 
 *© août 2026, Ouaga BF – L'Univers des Merveilles. Tous droits réservés.*  
 *Développeur : Marc Lompo – +226 72 66 21 61*
+
+## Mise à jour du 2 septembre 2026 – Localisation & Partage
+- **Nouvelle adresse** : À 380 m côté nord-est de l'USTA, au nouveau magasin de Abdoul Service – Ouagadougou, Burkina Faso (mise à jour sur Contact, À propos et le footer de toutes les pages).
+- **Carte Google Maps** : iframe pointant sur les coordonnées exactes (12.3870436, -1.4167699) + bouton « Obtenir l'itinéraire » (https://maps.app.goo.gl/MmhJjavX3UhDUPbSA) + bouton « Appeler pour plus d'infos » (tel:+226 77 36 77 27).
+- **Adresse du footer cliquable** : ouvre l'itinéraire Google Maps dans un nouvel onglet.
+- **Métadonnées Open Graph / Twitter Card** ajoutées sur les 6 pages : le partage du lien (WhatsApp, Facebook, etc.) affiche désormais la bannière personnalisée `images/og-banner.jpg` (1200×630 px, générée à partir du logo).
